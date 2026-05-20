@@ -26,6 +26,7 @@
   --radius-lg: 1rem;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --grain-opacity: 0.03;
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 
 /* ===== GLOBAL ===== */
@@ -209,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background-color 0.4s var(--ease-out-expo);
+  padding-top: var(--safe-top);
 }
 
 .header-inner {
@@ -342,10 +344,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: var(--safe-top);
   right: -100%;
   width: 320px;
-  height: 100vh;
+  height: calc(100vh - var(--safe-top));
   background-color: var(--color-bg-dark);
   padding: 6rem 2rem 2rem;
   border-top: 1px solid rgba(var(--color-primary-rgb), 0.2);
@@ -946,13 +948,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-item a {
-  color: var(--color-primary);
+  color: #7a5c00;
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   transition: color 0.2s ease;
 }
 
 .contact-item a:hover {
-  color: var(--color-primary-dark);
+  color: #5f4700;
 }
 
 .contact-form {
@@ -1210,52 +1215,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ===== EMERGENCY STICKY (mobile only) ===== */
-.emergency-sticky {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background-color: var(--color-emergency);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-text-white);
-  box-shadow: 0 -4px 16px rgba(204, 41, 54, 0.3);
-}
-
-.emergency-sticky a {
-  color: var(--color-text-white);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-}
-
-.emergency-sticky-icon {
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .emergency-sticky {
-    display: none;
-  }
-}
-
 /* ===== PADDING FIXES ===== */
 body {
   padding-top: 0;
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-bottom: 60px;
-  }
 }
 
 /* ===== SECTION LINK ===== */
