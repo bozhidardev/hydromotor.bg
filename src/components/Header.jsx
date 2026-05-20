@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IconPhone } from './Icons';
+import { asset } from '../data/assets';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ function Header() {
       <header className="header">
         <div className="header-inner">
           <NavLink to="/" className="header-logo" onClick={closeMenu}>
-            <img src="/images/logo_Hydromotor.png" alt="Хидромотор" />
+            <img src={asset('images/logo_Hydromotor.png')} alt="Хидромотор" />
           </NavLink>
 
           <nav className="header-nav">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY, SELLING_POINTS } from '../data/content';
+import { asset } from '../data/assets';
 
 export default function About() {
   return (
@@ -34,13 +35,13 @@ export default function About() {
         <div className="about-images">
           {/* TODO: Replace about-img-1.jpg with 1200×600+ image */}
           <img
-            src="/images/about-img-1.jpg"
+            src={asset('images/about-img-1.jpg')}
             alt="Хидромотор сервиз"
             className="about-image"
           />
           {/* TODO: Replace about-img-2.jpg with 1200×600+ image */}
           <img
-            src="/images/about-img-2.jpg"
+            src={asset('images/about-img-2.jpg')}
             alt="Хидромотор оборудване"
             className="about-image"
           />

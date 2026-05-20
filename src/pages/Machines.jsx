@@ -23,7 +23,7 @@ export default function MachinesPage() {
           <h2 className="brand-title">
             {/* TODO: Replace putzmeister-p2.jpg with a proper brand logo image */}
             <img
-              src="/images/putzmeister-p2.jpg"
+              src={asset('images/putzmeister-p2.jpg')}
               alt="Putzmeister"
               className="brand-logo-img"
             />
@@ -38,7 +38,7 @@ export default function MachinesPage() {
                 key={machine.slug}
               >
                 <div className="machine-card-image">
-                  <img src={machine.image} alt={machine.name} />
+                  <img src={asset(machine.image)} alt={machine.name} />
                 </div>
                 <div className="machine-card-body">
                   <span className="machine-card-brand">{machine.brand}</span>
@@ -68,7 +68,7 @@ export default function MachinesPage() {
                 key={machine.slug}
               >
                 <div className="machine-card-image">
-                  <img src={machine.image} alt={machine.name} />
+                  <img src={asset(machine.image)} alt={machine.name} />
                 </div>
                 <div className="machine-card-body">
                   <span className="machine-card-brand">{machine.brand}</span>

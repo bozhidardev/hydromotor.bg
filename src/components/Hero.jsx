@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IconFileText, IconWrench, IconChevronDown, IconFactory, IconHandshake, IconPackage, IconPhone, IconMapPin, IconShield } from './Icons';
+import { asset } from '../data/assets';
 
 const trustItems = [
   { icon: IconFactory, title: '25+ ГОДИНИ ОПИТ', sub: 'Основана през 1996 г.' },
@@ -12,8 +13,13 @@ const trustItems = [
 
 function Hero() {
   return (
-    <section className="hero" id="hero">
-      {/* Full-width background image is set via CSS */}
+    <section className="hero" id="hero"
+      style={{
+        backgroundImage: `url(${asset('images/hero-slide-1.jpg')})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 30%',
+      }}
+    >
       <div className="hero-overlay" />
 
       <div className="hero-inner">

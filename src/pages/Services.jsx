@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICE_TEXT, CONTACT } from '../data/content';
 import { IconGraduationCap, IconPackage, IconTruck, IconAlertTriangle, IconSearch } from '../components/Icons';
+import { asset } from '../data/assets';
 
 export default function Services() {
   return (
@@ -56,7 +57,7 @@ export default function Services() {
           {/* TODO: Replace service-workshop.jpg with 1600×900 image */}
           <div className="service-workshop">
             <img
-              src="/images/service-workshop.jpg"
+              src={asset('images/service-workshop.jpg')}
               alt="Сервизно хале на Хидромотор"
               className="service-workshop-image"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MACHINES } from '../data/machines';
+import { asset } from '../data/assets';
 
 function Machines() {
   const previewMachines = MACHINES.slice(0, 3);
@@ -24,7 +25,7 @@ function Machines() {
             >
               <div className="machine-card-icon">
                 <img
-                  src={machine.image}
+                  src={asset(machine.image)}
                   alt={machine.name}
                   style={{
                     width: '100%',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MACHINES } from '../data/machines';
+import { asset } from '../data/assets';
 
 export default function MachineDetail() {
   // TODO: All machine images (400×284) need to be replaced with 800×600+ versions
@@ -38,7 +39,7 @@ export default function MachineDetail() {
         <div className="machine-detail-grid">
           <div className="machine-detail-gallery">
             <img
-              src={machine.image}
+              src={asset(machine.image)}
               alt={machine.name}
               className="machine-detail-image"
             />
