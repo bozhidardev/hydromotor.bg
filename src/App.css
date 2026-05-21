@@ -2436,6 +2436,8 @@ body {
   .hero-actions .btn {
     flex: 1;
     max-width: 220px;
+    padding: 0.7rem 1rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -2449,8 +2451,14 @@ body {
 .hero-trust-bar {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 0;
+  -webkit-overflow-scrolling: touch;
   background: rgba(12, 12, 12, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -2458,12 +2466,18 @@ body {
   padding: 1.25rem 1.5rem;
 }
 
+.hero-trust-bar::-webkit-scrollbar {
+  display: none;
+}
+
 .hero-trust-item {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 0.85rem;
   padding: 0.5rem 1.25rem;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
 }
 
 .hero-trust-item:last-child {
@@ -2502,7 +2516,7 @@ body {
 }
 
 /* Golden accent stripe at hero bottom edge */
-.hero-trust-bar::after {
+.hero-trust-bar::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -2510,6 +2524,21 @@ body {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, transparent 0%, var(--color-primary) 20%, var(--color-primary) 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Fade edge for scrollable trust bar */
+.hero-trust-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, transparent, rgba(12, 12, 12, 0.95));
+  pointer-events: none;
+  z-index: 2;
 }
 
 
@@ -2536,6 +2565,23 @@ body {
 @media (min-width: 768px) {
   .hero-inner {
     padding-bottom: 4rem;
+  }
+}
+
+/* Desktop trust bar — spread items evenly */
+@media (min-width: 768px) {
+  .hero-trust-bar {
+    overflow-x: visible;
+    justify-content: space-around;
+  }
+
+  .hero-trust-item {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .hero-trust-bar::after {
+    display: none;
   }
 }
 
@@ -2640,25 +2686,23 @@ body {
   }
 
   .hero-trust-bar {
-    grid-template-columns: repeat(3, 1fr);
     padding: 1rem;
-    gap: 0.25rem;
-  }
-
-  .hero-trust-item:nth-child(4),
-  .hero-trust-item:nth-child(5) {
-    display: none;
   }
 
   .hero-scroll-indicator {
     display: none;
   }
-}
 
-/* Tablet hero trust bar: 3 columns */
-@media (max-width: 1024px) {
-  .hero-trust-bar {
-    grid-template-columns: repeat(3, 1fr);
+  .hero-badge {
+    margin-bottom: 0.85rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -2689,6 +2733,15 @@ body {
   .hero-badge {
     font-size: 0.6rem;
     padding: 0.3rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 0.35rem;
   }
 
   .hero-body {
@@ -2696,12 +2749,7 @@ body {
   }
 
   .hero-trust-bar {
-    grid-template-columns: repeat(2, 1fr);
     padding: 0.75rem;
-  }
-
-  .hero-trust-item:nth-child(3) {
-    display: none;
   }
 
   .hero-trust-item {
