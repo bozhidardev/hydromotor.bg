@@ -2479,3 +2479,181 @@ body {
     display: none;
   }
 }
+
+/* ===== VISUAL POLISH: INNER PAGES ===== */
+.about-page,
+.machines-page,
+.services-page,
+.downloads-page {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(var(--color-primary-rgb), 0.1) 0%, transparent 35%),
+    var(--color-bg-white);
+}
+
+.about-content,
+.services-content {
+  padding-top: 4.5rem;
+}
+
+.about-intro,
+.service-intro,
+.downloads-note {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.55));
+  border: 1px solid rgba(var(--color-primary-rgb), 0.22);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-intro {
+  padding: 2rem;
+}
+
+.service-intro {
+  padding: 1.75rem;
+  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.2);
+}
+
+.about-point,
+.service-card-full,
+.download-card {
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.about-point,
+.service-card-full {
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo), border-color 0.35s var(--ease-out-expo);
+}
+
+.about-point:hover,
+.service-card-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+  border-color: rgba(var(--color-primary-rgb), 0.4);
+}
+
+.about-image,
+.service-workshop-image {
+  border: 1px solid rgba(var(--color-primary-rgb), 0.16);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.about-image {
+  transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo);
+}
+
+.about-image:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+}
+
+.about-cta,
+.machine-detail-cta,
+.service-cta,
+.downloads-note {
+  background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.12), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(var(--color-primary-rgb), 0.28);
+}
+
+.brand-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.56));
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem 0.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-title {
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+}
+
+.brand-intro {
+  max-width: 70ch;
+}
+
+.machines-page .machine-card {
+  border: 1px solid rgba(var(--color-primary-rgb), 0.22);
+  background-color: #fff;
+}
+
+.machines-page .machine-card-body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
+}
+
+.machines-page .machine-card h3 {
+  line-height: 1.25;
+}
+
+.machine-detail-gallery,
+.specs-table {
+  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.machine-detail-info {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.18);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.service-247 {
+  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.downloads-grid {
+  margin-top: 3.25rem;
+}
+
+.download-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(var(--color-primary-rgb), 0.08));
+}
+
+.download-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(var(--color-primary-rgb), 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-card .btn {
+  min-width: 145px;
+}
+
+.not-found {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(var(--color-primary-rgb), 0.18), transparent 35%),
+    linear-gradient(135deg, #f8f4ed, #efe7da);
+}
+
+.not-found-content {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 740px;
+}
+
+@media (max-width: 767px) {
+  .brand-section {
+    padding: 1.5rem 1rem 0.25rem;
+  }
+
+  .download-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .download-card .btn {
+    width: 100%;
+  }
+
+  .machine-detail-info {
+    padding: 1.25rem;
+  }
+}
