@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MACHINES } from '../data/machines';
 import { PUTZMEISTER_DESCRIPTION, SANY_DESCRIPTION } from '../data/content';
+import { asset } from '../data/assets';
 
 // TODO: All machine images (400×284) should be replaced with 800×600+ versions
 export default function MachinesPage() {
