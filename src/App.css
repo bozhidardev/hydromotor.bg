@@ -1704,63 +1704,42 @@ body {
   object-fit: cover;
 }
 
-.service-247 {
+.service-cta {
   text-align: center;
   background-color: var(--color-bg-dark);
   color: var(--color-text-white);
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   border-radius: var(--radius-md);
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-
-
-.service-247 h3 {
-  color: var(--color-text-white);
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-.service-phones {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  position: relative;
-  z-index: 1;
-}
-
-.service-phone-link {
-  display: inline-block;
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  font-weight: 700;
-  transition: color 0.2s;
-}
-
-.service-phone-link:hover {
-  color: var(--color-primary-dark);
-}
-
-.service-cta {
-  text-align: center;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
+  position: relative;
 }
 
 .service-cta h3 {
+  color: var(--color-text-white);
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
 }
 
 .service-cta p {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 1.5rem;
+}
+
+.service-cta-phone {
+  margin-bottom: 1.5rem;
+}
+
+.service-cta-phone-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.service-cta-phone-link:hover {
+  color: var(--color-primary-dark);
 }
 
 .service-cta-buttons {
@@ -1771,12 +1750,6 @@ body {
 }
 
 @media (min-width: 600px) {
-  .service-phones {
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-  }
-
   .service-cta-buttons {
     flex-direction: row;
     justify-content: center;
@@ -2627,7 +2600,6 @@ body {
 
 .about-cta,
 .machine-detail-cta,
-.service-cta,
 .downloads-note {
   background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.12), rgba(255, 255, 255, 0.7));
   border: 1px solid rgba(var(--color-primary-rgb), 0.28);
@@ -2673,11 +2645,6 @@ body {
   border: 1px solid rgba(var(--color-primary-rgb), 0.18);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-}
-
-.service-247 {
-  border: 1px solid rgba(var(--color-primary-rgb), 0.25);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
 .downloads-grid {

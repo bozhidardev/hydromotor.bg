@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { SERVICE_TEXT, CONTACT } from '../data/content';
-import { IconGraduationCap, IconPackage, IconTruck, IconAlertTriangle, IconSearch } from '../components/Icons';
+import { SERVICE_TEXT } from '../data/content';
+import { IconGraduationCap, IconPackage, IconAlertTriangle, IconSearch } from '../components/Icons';
 import { asset } from '../data/assets';
 
 export default function Services() {
@@ -68,29 +68,20 @@ export default function Services() {
             />
           </div>
 
-          <div className="service-247 dark-grid-overlay">
-            <h3><IconAlertTriangle size={20} /> Телефон за сервизни услуги 24/7</h3>
-            <div className="service-phones">
-              <a href={`tel:${SERVICE_TEXT.phone247}`} className="service-phone-link">
-                {SERVICE_TEXT.phone247}
-              </a>
-              <a href={`tel:${SERVICE_TEXT.phone247Alt}`} className="service-phone-link">
-                {SERVICE_TEXT.phone247Alt}
-              </a>
-            </div>
-          </div>
         </div>
 
-        <div className="service-cta">
+        <div className="service-cta dark-grid-overlay">
           <h3>Нуждаете се от сервизна помощ?</h3>
           <p>Обадете се на 24/7 линията или ни пишете за консултация.</p>
-          <div className="service-cta-buttons">
-            <Link to="/kontakti" className="btn btn-primary">
-              Свържете се с нас
-            </Link>
-            <a href={`tel:${SERVICE_TEXT.phone247}`} className="btn btn-outline">
-              <IconTruck size={18} /> {SERVICE_TEXT.phone247}
+          <div className="service-cta-phone">
+            <a href={`tel:${SERVICE_TEXT.phone247}`} className="service-cta-phone-link">
+              {SERVICE_TEXT.phone247}
             </a>
+          </div>
+          <div className="service-cta-buttons">
+            <Link to="/kontakti" className="btn btn-outline-light">
+              Изпрати запитване
+            </Link>
           </div>
         </div>
       </div>
