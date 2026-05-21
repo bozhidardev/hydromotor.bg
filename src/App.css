@@ -2036,7 +2036,7 @@ body {
 
 @media (max-width: 767px) {
   .page-hero {
-    padding: calc(70px + var(--safe-top)) 0 2rem;
+    padding: calc(70px + 1rem + var(--safe-top)) 0 2rem;
   }
 }
 
