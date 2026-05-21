@@ -469,7 +469,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hide CTA bar when mobile menu is open */
-.mobile-menu.open ~ .mobile-cta-bar {
+.mobile-menu.open ~ .mobile-cta-bar,
+.mobile-menu.open ~ .mobile-cta-btn-safari {
   display: none;
 }
 
@@ -1946,6 +1947,43 @@ body {
 
 @media (min-width: 768px) {
   .mobile-cta-bar {
+    display: none;
+  }
+}
+
+/* ===== MOBILE CTA BUTTON — Safari fallback ===== */
+.mobile-cta-btn-safari {
+  position: fixed;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  left: 1rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-emergency);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  min-height: 44px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.mobile-cta-btn-safari.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .mobile-cta-btn-safari {
     display: none;
   }
 }
