@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IconPhone } from './Icons';
 import { asset } from '../data/assets';
@@ -30,6 +30,10 @@ function Header() {
         document.body.style.right = '';
         document.body.style.overflow = '';
         document.body.style.width = '';
+        if (navigatingRef.current) {
+          navigatingRef.current = false;
+          return;
+        }
         window.scrollTo(0, scrollY);
       };
     } else {
@@ -51,6 +55,13 @@ function Header() {
     setMenuOpen((prev) => !prev);
   };
 
+  const navigatingRef = useRef(false);
+
+  const navigateAndClose = () => {
+    navigatingRef.current = true;
+    setMenuOpen(false);
+  };
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
@@ -62,7 +73,7 @@ function Header() {
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
-          <NavLink to="/" className="header-logo" onClick={closeMenu}>
+          <NavLink to="/" className="header-logo" onClick={navigateAndClose}>
             <img src={asset('images/logo_Hydromotor.png')} alt="Хидромотор" />
           </NavLink>
 
@@ -107,19 +118,19 @@ function Header() {
         <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
           <span>✕</span>
         </button>
-        <NavLink to="/" className={linkClass} onClick={closeMenu}>
+        <NavLink to="/" className={linkClass} onClick={navigateAndClose}>
           Начало
         </NavLink>
-        <NavLink to="/mashini" className={linkClass} onClick={closeMenu}>
+        <NavLink to="/mashini" className={linkClass} onClick={navigateAndClose}>
           Машини
         </NavLink>
-        <NavLink to="/serviz" className={linkClass} onClick={closeMenu}>
+        <NavLink to="/serviz" className={linkClass} onClick={navigateAndClose}>
           Услуги
         </NavLink>
-        <NavLink to="/za-nas" className={linkClass} onClick={closeMenu}>
+        <NavLink to="/za-nas" className={linkClass} onClick={navigateAndClose}>
           За нас
         </NavLink>
-        <NavLink to="/kontakti" className={linkClass} onClick={closeMenu}>
+        <NavLink to="/kontakti" className={linkClass} onClick={navigateAndClose}>
           Контакти
         </NavLink>
 
