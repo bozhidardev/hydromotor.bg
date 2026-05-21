@@ -369,6 +369,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  overflow-y: auto;
 }
 
 .mobile-menu.open {
@@ -484,6 +485,11 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-overlay.open {
   opacity: 1;
   pointer-events: all;
+}
+
+/* Hide CTA bar when mobile menu is open */
+.mobile-menu.open ~ .mobile-cta-bar {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -1312,6 +1318,13 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .footer-grid {
     grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  }
+}
+
+/* Footer bottom padding on mobile */
+@media (max-width: 767px) {
+  .footer {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
   }
 }
 
