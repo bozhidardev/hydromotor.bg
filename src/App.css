@@ -2368,7 +2368,7 @@ body {
 /* Desktop hero: shift background to show truck tires above trust bar */
 @media (min-width: 768px) {
   .hero {
-    background-position: center 45% !important;
+    background-position: center 50% !important;
   }
 }
 
