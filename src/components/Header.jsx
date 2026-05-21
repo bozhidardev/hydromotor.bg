@@ -123,6 +123,12 @@ function Header() {
           Контакти
         </NavLink>
 
+        <a href="tel:0878553273" className="mobile-menu-phone" onClick={closeMenu}>
+          <IconPhone size={14} />
+          <span>0878 553 273</span>
+          <span className="menu-phone-label">24/7 СЕРВИЗ</span>
+        </a>
+
       </div>
 
       <div

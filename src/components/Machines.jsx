@@ -27,6 +27,7 @@ function Machines() {
                 <img
                   src={asset(machine.image)}
                   alt={machine.name}
+                  loading="lazy"
                   style={{
                     width: '100%',
                     height: '140px',

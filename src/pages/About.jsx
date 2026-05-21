@@ -38,12 +38,14 @@ export default function About() {
             src={asset('images/about-img-1.jpg')}
             alt="Хидромотор сервиз"
             className="about-image"
+            loading="lazy"
           />
           {/* TODO: Replace about-img-2.jpg with 1200×600+ image */}
           <img
             src={asset('images/about-img-2.jpg')}
             alt="Хидромотор оборудване"
             className="about-image"
+            loading="lazy"
           />
         </div>
 

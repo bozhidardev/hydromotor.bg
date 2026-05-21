@@ -81,7 +81,6 @@ function Footer() {
             </a>
           </div>
           <div className="footer-legal">
-            <Link to="/pravna-informacia">Правна информация</Link>
             <a href="#" onClick={(e) => e.preventDefault()}>Политика за бисквитки</a>
           </div>
         </div>

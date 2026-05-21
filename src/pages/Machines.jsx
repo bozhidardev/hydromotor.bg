@@ -27,6 +27,7 @@ export default function MachinesPage() {
               src={asset('images/putzmeister-p2.jpg')}
               alt="Putzmeister"
               className="brand-logo-img"
+              loading="lazy"
             />
             Putzmeister
           </h2>
@@ -39,7 +40,7 @@ export default function MachinesPage() {
                 key={machine.slug}
               >
                 <div className="machine-card-image">
-                  <img src={asset(machine.image)} alt={machine.name} />
+                  <img src={asset(machine.image)} alt={machine.name} loading="lazy" />
                 </div>
                 <div className="machine-card-body">
                   <span className="machine-card-brand">{machine.brand}</span>
@@ -69,7 +70,7 @@ export default function MachinesPage() {
                 key={machine.slug}
               >
                 <div className="machine-card-image">
-                  <img src={asset(machine.image)} alt={machine.name} />
+                  <img src={asset(machine.image)} alt={machine.name} loading="lazy" />
                 </div>
                 <div className="machine-card-body">
                   <span className="machine-card-brand">{machine.brand}</span>

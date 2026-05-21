@@ -60,6 +60,7 @@ export default function Services() {
               src={asset('images/service-workshop.jpg')}
               alt="Сервизно хале на Хидромотор"
               className="service-workshop-image"
+              loading="lazy"
             />
           </div>
 
