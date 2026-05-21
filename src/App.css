@@ -1925,14 +1925,14 @@ body {
   gap: 0.5rem;
   background-color: var(--color-emergency);
   color: #fff;
-  padding: 0.8rem 1rem;
-  padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 20px));
+  padding: 0.6rem 1rem;
+  padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
   transform: translateY(100%);
   transition: transform 0.4s var(--ease-out-expo);
-  min-height: 52px;
+  min-height: 44px;
 }
 
 .mobile-cta-bar.visible {
@@ -1984,7 +1984,7 @@ body {
 
 @media (max-width: 767px) {
   .back-to-top {
-    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
   }
 }
 
