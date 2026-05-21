@@ -92,4 +92,5 @@ export const CONTACT = {
   servicePhones: ['0878 553 273', '0889 366 664'],
   emails: ['hy_motor@abv.bg', 'office@hydromotor.bg'],
   facebook: 'https://www.facebook.com/%D0%A5%D0%B8%D0%B4%D1%80%D0%BE%D0%BC%D0%BE%D1%82%D0%BE%D1%80-%D0%9E%D0%9E%D0%94-955410091164089/',
+  linkedin: 'https://www.linkedin.com/company/hydromotor',
 };

@@ -25,15 +25,7 @@ export default function MachinesPage() {
       <div className="container">
         {/* Putzmeister Section */}
         <div className="brand-section">
-          <h2 className="brand-title">
-            <img
-              src={asset('images/putzmeister-p2.jpg')}
-              alt="Putzmeister"
-              className="brand-logo-img"
-              loading="lazy"
-            />
-            Putzmeister
-          </h2>
+          <h2 className="brand-title">Putzmeister</h2>
           <p className="brand-intro">{PUTZMEISTER_DESCRIPTION.intro}</p>
           <div className="machines-grid">
             {putzmeisterMachines.map((machine) => (

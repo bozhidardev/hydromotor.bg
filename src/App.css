@@ -1368,12 +1368,6 @@ body {
   gap: 0.75rem;
 }
 
-.brand-logo-img {
-  height: 36px;
-  width: auto;
-  border-radius: 4px;
-}
-
 .brand-intro {
   color: var(--color-text-muted);
   line-height: 1.65;

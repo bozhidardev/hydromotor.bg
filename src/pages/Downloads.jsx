@@ -14,7 +14,7 @@ const catalogs = [
   {
     title: 'МАЙ-МАШИНИ 2020',
     description: 'Каталог на машините — 2020 г.',
-    file: '/pdfs/%D0%9C%D0%90%D0%99-%D0%9C%D0%90%D0%A8%D0%98%D0%9D%D0%98.pdf',
+    file: '/pdfs/maj-mashini-2020.pdf',
     size: '2.4 MB',
   },
 ];

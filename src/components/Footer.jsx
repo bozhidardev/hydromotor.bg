@@ -72,7 +72,7 @@ function Footer() {
               <IconFacebook size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/company/hydromotor"
+              href={CONTACT.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

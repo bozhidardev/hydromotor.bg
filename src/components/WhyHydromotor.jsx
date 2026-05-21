@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPANY, SELLING_POINTS } from '../data/content';
-import { IconShield } from './Icons';
+import { IconHandshake, IconPackage, IconWrench, IconClock } from './Icons';
 
 function WhyHydromotor() {
   return (
@@ -16,17 +16,21 @@ function WhyHydromotor() {
             <p>{COMPANY.serviceDescription}</p>
           </div>
           <div className="why-hydromotor-points">
-            {SELLING_POINTS.map((point, index) => (
-              <div className="why-point" key={index}>
-                <div className="why-point-icon">
-                  <IconShield size={22} />
+            {SELLING_POINTS.map((point, index) => {
+              const pointIcons = [IconClock, IconHandshake, IconPackage, IconWrench];
+              const PointIcon = pointIcons[index] || IconClock;
+              return (
+                <div className="why-point" key={index}>
+                  <div className="why-point-icon">
+                    <PointIcon size={22} />
+                  </div>
+                  <div className="why-point-text">
+                    <h4>{point.title}</h4>
+                    <p>{point.text}</p>
+                  </div>
                 </div>
-                <div className="why-point-text">
-                  <h4>{point.title}</h4>
-                  <p>{point.text}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
