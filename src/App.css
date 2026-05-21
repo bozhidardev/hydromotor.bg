@@ -1706,40 +1706,22 @@ body {
 
 .service-cta {
   text-align: center;
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-white);
-  padding: 3rem 2.5rem;
+  background-color: var(--color-bg-light);
+  padding: 3rem 2rem;
   border-radius: var(--radius-md);
-  max-width: 600px;
+  box-shadow: var(--shadow-sm);
+  max-width: 700px;
   margin: 0 auto;
-  position: relative;
 }
 
 .service-cta h3 {
-  color: var(--color-text-white);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .service-cta p {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted);
   margin-bottom: 1.5rem;
-}
-
-.service-cta-phone {
-  margin-bottom: 1.5rem;
-}
-
-.service-cta-phone-link {
-  display: inline-block;
-  color: var(--color-primary);
-  font-size: 1.6rem;
-  font-weight: 700;
-  transition: color 0.2s;
-}
-
-.service-cta-phone-link:hover {
-  color: var(--color-primary-dark);
 }
 
 .service-cta-buttons {
@@ -1753,6 +1735,7 @@ body {
   .service-cta-buttons {
     flex-direction: row;
     justify-content: center;
+    gap: 1.5rem;
   }
 }
 

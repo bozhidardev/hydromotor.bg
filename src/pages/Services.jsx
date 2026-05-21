@@ -70,16 +70,14 @@ export default function Services() {
 
         </div>
 
-        <div className="service-cta dark-grid-overlay">
+        <div className="service-cta">
           <h3>Нуждаете се от сервизна помощ?</h3>
-          <p>Обадете се на 24/7 линията или ни пишете за консултация.</p>
-          <div className="service-cta-phone">
-            <a href={`tel:${SERVICE_TEXT.phone247}`} className="service-cta-phone-link">
-              {SERVICE_TEXT.phone247}
-            </a>
-          </div>
+          <p>Обадете се на 24/7 линията или ни изпратете запитване за консултация.</p>
           <div className="service-cta-buttons">
-            <Link to="/kontakti" className="btn btn-outline-light">
+            <a href={`tel:${SERVICE_TEXT.phone247}`} className="btn btn-primary">
+              0878 553 273
+            </a>
+            <Link to="/kontakti" className="btn btn-outline">
               Изпрати запитване
             </Link>
           </div>
