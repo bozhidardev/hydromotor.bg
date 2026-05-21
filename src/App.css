@@ -2062,14 +2062,14 @@ body {
       105deg,
       rgba(10, 10, 10, 0.92) 0%,
       rgba(10, 10, 10, 0.78) 30%,
-      rgba(10, 10, 10, 0.30) 50%,
-      rgba(10, 10, 10, 0.08) 65%,
-      rgba(10, 10, 10, 0.02) 80%
+      rgba(10, 10, 10, 0.25) 50%,
+      rgba(10, 10, 10, 0.05) 65%,
+      rgba(10, 10, 10, 0.01) 80%
     ),
     linear-gradient(
       0deg,
-      rgba(10, 10, 10, 0.45) 0%,
-      rgba(10, 10, 10, 0.05) 50%
+      rgba(10, 10, 10, 0.20) 0%,
+      rgba(10, 10, 10, 0.02) 50%
     );
   pointer-events: none;
   z-index: 0;
@@ -2083,8 +2083,8 @@ body {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 1;
