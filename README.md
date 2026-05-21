@@ -68,7 +68,6 @@ The gold accent (#f9c500) is the Hydromotor brand color and matches the original
 
 ## Notes
 
-- **Contact form:** Visual-only (no backend). Form submits are prevented client-side.
 - **No backend:** Fully static site. No database, auth, or server-side logic.
 - **Content:** Only includes text confirmed from the original site. No invented testimonials, counts, or logos.
 
@@ -88,6 +87,26 @@ This site uses `BrowserRouter` from react-router-dom, which relies on the browse
 ### Dev Server Notes
 
 Rarely, the Vite dev server may show a brief blank/flash-of-empty on initial HMR reconnect. A simple page refresh resolves this. This is a known Vite behavior and not a code issue.
+
+## Form Setup
+
+The contact form uses [Web3Forms](https://web3forms.com/) to send submissions via email — no backend required.
+
+### Setup
+
+1. Go to [Web3Forms](https://web3forms.com/)
+2. Verify the Hydromotor email address
+3. Copy the access key
+4. Create a `.env` file in the project root (use `.env.example` as reference):
+   ```
+   VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+   ```
+5. Restart the dev server
+6. Test the contact form by submitting a test message
+
+For production deployment, add the same `VITE_WEB3FORMS_ACCESS_KEY` environment variable in your hosting platform.
+
+> ⚠️ Never commit the actual access key. Only `.env.example` with a placeholder should be committed.
 
 ## License
 
