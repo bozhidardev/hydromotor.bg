@@ -24,7 +24,7 @@ export default function MachineDetail() {
 
   return (
     <section className="machine-detail">
-      <div className="machine-detail-hero">
+      <div className="page-hero">
         <div className="container">
           <Link to="/mashini" className="back-link">
             ← Към всички машини

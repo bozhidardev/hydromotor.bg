@@ -6,14 +6,14 @@ import { asset } from '../data/assets';
 export default function About() {
   return (
     <section className="about-page">
-      <div className="about-hero">
+      <div className="page-hero">
         <div className="container">
           <h1>За нас</h1>
-          <p className="about-hero-subtitle">{COMPANY.slogan}</p>
+          <p className="page-hero-subtitle">{COMPANY.slogan}</p>
         </div>
       </div>
 
-      <div className="container about-content">
+      <div className="container about-content section-light-spacing">
         <div className="about-intro">
           <h2>Фирма "Хидромотор" ООД</h2>
           <p className="about-description">{COMPANY.description}</p>

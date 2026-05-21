@@ -7,14 +7,14 @@ import { asset } from '../data/assets';
 export default function Services() {
   return (
     <section className="services-page">
-      <div className="services-hero">
+      <div className="page-hero">
         <div className="container">
           <h1>Сервиз</h1>
-          <p>Професионален сервиз за диагностика и ремонт</p>
+          <p className="page-hero-subtitle">Професионален сервиз за диагностика и ремонт</p>
         </div>
       </div>
 
-      <div className="container services-content">
+      <div className="container services-content section-light-spacing">
         <div className="service-main">
           <div className="service-intro">
             <p>{SERVICE_TEXT.intro}</p>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { IconPhone, IconFileText } from './Icons';
+import { IconPhone } from './Icons';
 
 function MobileCtaBar() {
   const [visible, setVisible] = useState(false);
@@ -17,14 +16,14 @@ function MobileCtaBar() {
   }, []);
 
   return (
-    <div className={`mobile-cta-bar ${visible ? 'visible' : ''}`}>
-      <a href="tel:0878553273" className="cta-bar-phone">
-        <IconPhone size={18} /> 0878 553 273
-      </a>
-      <Link to="/kontakti" className="cta-bar-quote">
-        <IconFileText size={18} /> Запитване
-      </Link>
-    </div>
+    <a
+      href="tel:0878553273"
+      className={`mobile-cta-bar ${visible ? 'visible' : ''}`}
+    >
+      <IconPhone size={16} />
+      <span>0878 553 273</span>
+      <span className="cta-label">24/7 СЕРВИЗ</span>
+    </a>
   );
 }
 

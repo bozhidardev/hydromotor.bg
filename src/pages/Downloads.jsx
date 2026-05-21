@@ -21,10 +21,10 @@ const catalogs = [
 export default function Downloads() {
   return (
     <section className="downloads-page">
-      <div className="downloads-hero">
+      <div className="page-hero">
         <div className="container">
           <h1>Каталози</h1>
-          <p>Изтеглете актуалните каталози и списъци на машини</p>
+          <p className="page-hero-subtitle">Изтеглете актуалните каталози и списъци на машини</p>
         </div>
       </div>
 

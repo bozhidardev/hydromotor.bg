@@ -11,10 +11,10 @@ export default function MachinesPage() {
 
   return (
     <section className="machines-page">
-      <div className="machines-hero">
+      <div className="page-hero">
         <div className="container">
           <h1>Всички машини</h1>
-          <p>Автобетонпомпи Putzmeister и SANY за всякакви строителни задачи</p>
+          <p className="page-hero-subtitle">Автобетонпомпи Putzmeister и SANY за всякакви строителни задачи</p>
         </div>
       </div>
 

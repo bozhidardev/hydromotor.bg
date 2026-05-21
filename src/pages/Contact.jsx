@@ -12,10 +12,10 @@ export default function Contact() {
 
   return (
     <section className="contact-page">
-      <div className="contact-hero">
+      <div className="page-hero">
         <div className="container">
           <h1>Контакти</h1>
-          <p>Свържете се с нас за оферта, консултация или сервиз</p>
+          <p className="page-hero-subtitle">Свържете се с нас за оферта, консултация или сервиз</p>
         </div>
       </div>
 
