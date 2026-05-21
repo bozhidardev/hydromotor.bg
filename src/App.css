@@ -2274,7 +2274,7 @@ body {
 /* ===== HERO — CINEMATIC FULL-WIDTH ===== */
 .hero {
   position: relative;
-  min-height: clamp(680px, 88vh, 860px);
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg-dark);
