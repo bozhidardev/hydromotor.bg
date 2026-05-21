@@ -2365,6 +2365,13 @@ body {
   }
 }
 
+/* Desktop hero: shift background to show truck tires above trust bar */
+@media (min-width: 768px) {
+  .hero {
+    background-position: center 45% !important;
+  }
+}
+
 /* ===== HEADER CENTERED NAV (Desktop) ===== */
 .header-phone-desktop {
   display: none;
