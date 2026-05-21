@@ -27,3 +27,5 @@ yarn-error.log*
 
 # Misc
 *.local
+# Planning documents (not part of the built site)
+planning/

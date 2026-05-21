@@ -68,7 +68,7 @@ export default function Services() {
             />
           </div>
 
-          <div className="service-247">
+          <div className="service-247 dark-grid-overlay">
             <h3><IconAlertTriangle size={20} /> Телефон за сервизни услуги 24/7</h3>
             <div className="service-phones">
               <a href={`tel:${SERVICE_TEXT.phone247}`} className="service-phone-link">

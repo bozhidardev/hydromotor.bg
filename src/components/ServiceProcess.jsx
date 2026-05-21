@@ -25,7 +25,7 @@ const steps = [
 
 function ServiceProcess() {
   return (
-    <section className="service-process scroll-reveal section-diagonal" id="process">
+    <section className="service-process scroll-reveal section-diagonal dark-grid-overlay" id="process">
       <div className="container">
         <div className="section-header">
           <h2>Как работи сервизният процес</h2>

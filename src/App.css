@@ -626,6 +626,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+.machine-card-icon img {
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.machine-card:hover .machine-card-icon img {
+  transform: scale(1.05);
 }
 
 .machine-card h3 {
@@ -820,19 +828,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Diagonal grid overlay on dark sections */
-.service-process::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
+
 
 .service-process .section-header h2 {
   color: var(--color-text-white);
@@ -1045,20 +1041,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-/* Grid overlay on footer too */
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
+
 
 .footer-grid {
   display: grid;
@@ -1237,6 +1220,24 @@ body {
 .scroll-reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Dark grid overlay — reusable diagonal grid pattern */
+.dark-grid-overlay {
+  position: relative;
+}
+.dark-grid-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
 }
 
 /* ===== PAGE: ABOUT ===== */
@@ -1713,19 +1714,7 @@ body {
   position: relative;
 }
 
-.service-247::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
+
 
 .service-247 h3 {
   color: var(--color-text-white);
@@ -2155,6 +2144,19 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   width: fit-content;
+}
+
+/* Hero badge — short/long toggle for mobile */
+.hero-badge-short {
+  display: none;
+}
+@media (max-width: 480px) {
+  .hero-badge-short {
+    display: inline;
+  }
+  .hero-badge-long {
+    display: none;
+  }
 }
 
 /* Hero headline */

@@ -25,7 +25,8 @@ function Hero() {
       <div className="hero-inner">
         <div className="hero-content">
           <div className="hero-badge">
-            ОФИЦИАЛЕН ПРЕДСТАВИТЕЛ НА PUTZMEISTER ЗА БЪЛГАРИЯ
+            <span className="hero-badge-short">Putzmeister — Официален партньор</span>
+            <span className="hero-badge-long">Официален представител на Putzmeister за България</span>
           </div>
 
           <h1>ХИДРОМОТОР</h1>
