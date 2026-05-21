@@ -2275,7 +2275,6 @@ body {
 .hero {
   position: relative;
   min-height: clamp(680px, 88vh, 860px);
-  min-height: clamp(680px, 88dvh, 860px);
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg-dark);
@@ -2625,8 +2624,8 @@ body {
   }
 
   .hero-inner {
-    padding: 2.5rem 1.5rem 2rem;
-    min-height: 60dvh;
+    padding: 2rem 1.5rem 1.5rem;
+    min-height: auto;
   }
 
   .hero h1 {
@@ -2665,8 +2664,26 @@ body {
 
 @media (max-width: 480px) {
   .hero-inner {
-    min-height: 65dvh;
-    padding: 1.5rem 1.25rem 1.5rem;
+    min-height: auto;
+    padding: 1.25rem 1rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-body {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-actions {
+    gap: 0.6rem;
   }
 
   .hero-badge {
