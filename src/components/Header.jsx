@@ -5,10 +5,46 @@ import { asset } from '../data/assets';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // iOS-friendly body scroll lock
+  useEffect(() => {
+    if (menuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+      document.body.style.width = '100%';
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+      };
+    } else {
+      document.body.style.overflow = '';
+      return undefined;
+    }
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
   const toggleMenu = () => {
@@ -24,7 +60,7 @@ function Header() {
 
   return (
     <>
-      <header className="header">
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
           <NavLink to="/" className="header-logo" onClick={closeMenu}>
             <img src={asset('images/logo_Hydromotor.png')} alt="Хидромотор" />
@@ -68,6 +104,9 @@ function Header() {
       </header>
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
+          <span>✕</span>
+        </button>
         <NavLink to="/" className={linkClass} onClick={closeMenu}>
           Начало
         </NavLink>

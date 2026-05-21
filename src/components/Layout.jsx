@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Header from './Header';
+import MobileCtaBar from './MobileCtaBar';
+import BackToTop from './BackToTop';
 import Footer from './Footer';
 
 function useScrollReveal() {
@@ -61,9 +63,11 @@ function Layout() {
   return (
     <>
       <Header />
+      <MobileCtaBar />
       <main>
         <Outlet />
       </main>
+      <BackToTop />
       <Footer />
     </>
   );
