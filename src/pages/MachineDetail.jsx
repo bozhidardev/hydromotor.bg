@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { MACHINES } from '../data/machines';
 import { asset } from '../data/assets';
 
@@ -10,6 +11,10 @@ export default function MachineDetail() {
   if (!machine) {
     return (
       <section className="machine-detail not-found">
+        <Helmet>
+          <title>Машината не е намерена — Хидромотор</title>
+          <meta name="description" content="Търсената машина не е намерена. Разгледайте нашата гама автобетонпомпи Putzmeister и SANY." />
+        </Helmet>
         <div className="container" style={{ textAlign: 'center', padding: '4rem 0' }}>
           <h1>Машината не е намерена</h1>
           <p>Машината с този адрес не съществува.</p>
@@ -23,6 +28,10 @@ export default function MachineDetail() {
 
   return (
     <section className="machine-detail">
+      <Helmet>
+        <title>{machine.name} — {machine.category} | Хидромотор</title>
+        <meta name="description" content={machine.description.substring(0, 155)} />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <Link to="/mashini" className="back-link">

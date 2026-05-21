@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { MACHINES } from '../data/machines';
 import { PUTZMEISTER_DESCRIPTION, SANY_DESCRIPTION } from '../data/content';
 import { asset } from '../data/assets';
@@ -10,6 +11,10 @@ export default function MachinesPage() {
 
   return (
     <section className="machines-page">
+      <Helmet>
+        <title>Машини — Автобетонпомпи Putzmeister и SANY | Хидромотор</title>
+        <meta name="description" content="Автобетонпомпи Putzmeister (M 36-4, M 38-5, M 62-6) и SANY (20–60м). Официален представител. Продажба, сервиз и резервни части." />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>Всички машини</h1>

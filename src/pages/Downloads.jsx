@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { IconPdf } from '../components/Icons';
 
 const catalogs = [
@@ -21,6 +22,10 @@ const catalogs = [
 export default function Downloads() {
   return (
     <section className="downloads-page">
+      <Helmet>
+        <title>Каталози — Хидромотор | PDF каталози и брошури</title>
+        <meta name="description" content="Изтеглете каталози и брошури на Хидромотор — Putzmeister Maschinenliste, МАЙ-МАШИНИ и други." />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>Каталози</h1>

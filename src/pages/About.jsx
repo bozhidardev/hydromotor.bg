@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { COMPANY, SELLING_POINTS } from '../data/content';
 import { asset } from '../data/assets';
 
 export default function About() {
   return (
     <section className="about-page">
+      <Helmet>
+        <title>За нас — Хидромотор ООД | 25+ години опит</title>
+        <meta name="description" content="Хидромотор ООД е основана през 1996 г. Официален представител на Putzmeister за България от 1998 г. Професионален сервиз, резервни части и ремонт на място." />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>За нас</h1>

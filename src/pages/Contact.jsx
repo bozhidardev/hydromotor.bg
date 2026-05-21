@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CONTACT } from '../data/content';
 import { IconMapPin, IconPhone, IconAlertTriangle, IconMail, IconBuilding } from '../components/Icons';
 import ContactForm from '../components/ContactForm';
@@ -8,6 +9,10 @@ export default function Contact() {
 
   return (
     <section className="contact-page">
+      <Helmet>
+        <title>Контакти — Хидромотор ООД | Телефон, адрес, имейл</title>
+        <meta name="description" content="Свържете се с Хидромотор: 02 / 999 75 06, 0878 553 273 (24/7). Адрес: с. Кривина, ул. Искър 53А. Имейл: office@hydromotor.bg." />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>Контакти</h1>

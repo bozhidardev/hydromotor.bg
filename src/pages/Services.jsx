@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { SERVICE_TEXT, CONTACT } from '../data/content';
 import { IconGraduationCap, IconPackage, IconTruck, IconAlertTriangle, IconSearch } from '../components/Icons';
 import { asset } from '../data/assets';
@@ -7,6 +8,10 @@ import { asset } from '../data/assets';
 export default function Services() {
   return (
     <section className="services-page">
+      <Helmet>
+        <title>Сервиз — Хидромотор ООД | Професионален сервиз за бетонпомпи</title>
+        <meta name="description" content="Професионална диагностика и ремонт на бетонпомпи, тунелни машини и индустриални помпи. Сертифицирани инженери. 24/7 аварийна помощ. Резервни части на склад." />
+      </Helmet>
       <div className="page-hero">
         <div className="container">
           <h1>Сервиз</h1>
