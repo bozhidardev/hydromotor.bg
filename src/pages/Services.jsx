@@ -54,7 +54,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* TODO: Replace service-workshop.jpg with 1600×900 image */}
           <div className="service-workshop">
             <img
               src={asset('images/service-workshop.jpg')}

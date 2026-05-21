@@ -89,25 +89,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 1.25rem;
 }
 
-/* Subtle diagonal grid pattern for dark sections */
-.dark-grid-pattern {
-  position: relative;
-}
-
-.dark-grid-pattern::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-
 /* ===== SECTION HEADER ===== */
 .section-header {
   text-align: center;
@@ -566,88 +547,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .section-header h2 {
     font-size: 1.6rem;
-  }
-}
-
-/* ===== TRUST BAR ===== */
-.trust-bar {
-  background-color: var(--color-bg-dark);
-  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.15);
-  border-top: 1px solid rgba(var(--color-primary-rgb), 0.1);
-  padding: 1rem 0;
-  overflow: hidden;
-}
-
-.trust-bar-track {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0 1.25rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.trust-bar-track::-webkit-scrollbar {
-  display: none;
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  flex-shrink: 0;
-  transition: color 0.4s var(--ease-out-expo);
-}
-
-.trust-item-icon {
-  flex-shrink: 0;
-  color: var(--color-primary);
-}
-
-.trust-item:hover {
-  color: var(--color-primary);
-}
-
-@media (min-width: 768px) {
-  .trust-bar-track {
-    justify-content: space-between;
-  }
-}
-
-/* Scroll-fade edge on mobile */
-.trust-bar {
-  position: relative;
-}
-
-.trust-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 48px;
-  background: linear-gradient(to right, transparent, var(--color-bg-dark));
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .trust-bar::after {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .trust-bar-track {
-    -webkit-overflow-scrolling: touch;
-    gap: 1.5rem;
   }
 }
 

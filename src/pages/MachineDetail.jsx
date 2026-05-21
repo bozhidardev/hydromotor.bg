@@ -4,7 +4,6 @@ import { MACHINES } from '../data/machines';
 import { asset } from '../data/assets';
 
 export default function MachineDetail() {
-  // TODO: All machine images (400×284) need to be replaced with 800×600+ versions
   const { slug } = useParams();
   const machine = MACHINES.find((m) => m.slug === slug);
 

@@ -4,7 +4,6 @@ import { MACHINES } from '../data/machines';
 import { PUTZMEISTER_DESCRIPTION, SANY_DESCRIPTION } from '../data/content';
 import { asset } from '../data/assets';
 
-// TODO: All machine images (400×284) should be replaced with 800×600+ versions
 export default function MachinesPage() {
   const putzmeisterMachines = MACHINES.filter((m) => m.brand === 'Putzmeister');
   const sanyMachines = MACHINES.filter((m) => m.brand === 'SANY');
@@ -22,7 +21,6 @@ export default function MachinesPage() {
         {/* Putzmeister Section */}
         <div className="brand-section">
           <h2 className="brand-title">
-            {/* TODO: Replace putzmeister-p2.jpg with a proper brand logo image */}
             <img
               src={asset('images/putzmeister-p2.jpg')}
               alt="Putzmeister"
