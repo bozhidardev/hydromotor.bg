@@ -15,7 +15,7 @@ function Hero() {
   return (
     <section className="hero" id="hero"
       style={{
-        backgroundImage: `url(${asset('images/hero-slide-1.jpg')})`,
+        backgroundImage: `url(${asset('images/hero-concrete-pump-sharp.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center 30%',
       }}
