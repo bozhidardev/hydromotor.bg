@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Хидромотор — Страницата не е намерена</title>
+    <script type="text/javascript">
+      // SPA redirect for GitHub Pages — preserves the path and lets React Router handle it
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Страницата не е намерена</h1>
+    <p>Ако не бъдете пренасочени автоматично, моля посетете <a href="/">началната страница</a>.</p>
+  </body>
+</html>

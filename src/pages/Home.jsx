@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
+import { organizationSchema, webPageSchema } from '../utils/seoSchema';
 import Hero from '../components/Hero';
 import Machines from '../components/Machines';
 import Services from '../components/Services';
@@ -10,10 +11,19 @@ import ContactMap from '../components/ContactMap';
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <title>Хидромотор — Официален представител на Putzmeister в България | Бетонпомпи и сервиз</title>
-        <meta name="description" content="Хидромотор — официален представител на Putzmeister в България от 1998 г. Продажба на бетонпомпи, тунелни машини, резервни части и 24/7 сервиз. 25+ години опит." />
-      </Helmet>
+      <SEO
+        title="Официален представител на Putzmeister в България"
+        description="Хидромотор — продажба и сервиз на бетонпомпи, тунелни машини и индустриални помпи. 25+ години опит. 24/7 поддръжка."
+        canonical="/"
+        jsonLd={[
+          organizationSchema(),
+          webPageSchema(
+            'Официален представител на Putzmeister в България',
+            'Хидромотор — продажба и сервиз на бетонпомпи, тунелни машини и индустриални помпи. 25+ години опит. 24/7 поддръжка.',
+            '/'
+          ),
+        ]}
+      />
       <Hero />
       <Machines />
       <Services />
