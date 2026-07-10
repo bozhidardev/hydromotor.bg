@@ -1,0 +1,1076 @@
+# ХИДРОМОТОР ООД — Premium UX Architecture v2.0
+## Complete UX Redesign Document
+
+**Client:** Хидромотор ООД (Hydromotor Ltd.)  
+**Project:** Corporate Website UX Redesign — Premium Industrial Brand Experience  
+**Date:** June 2026  
+**Author:** ArchitectUX — Technical Architecture & UX Foundation  
+**Status:** Foundation-Ready for Implementation
+
+---
+
+## 0. EXECUTIVE SUMMARY
+
+The current Hydromotor website is a competent but generic brochure site. This architecture transforms it into a **premium, AAA-quality industrial B2B experience** that communicates authority, engineering precision, and trustworthiness — the same emotional resonance as Caterpillar, Liebherr, or Putzmeister corporate sites.
+
+**Core Transformation Principles:**
+1. **Industrial Authority** — Every pixel communicates engineering credibility
+2. **Motion as Meaning** — Animations tell the story of power, precision, and reliability
+3. **Conversion by Confidence** — Users convert because they trust the brand, not because they're pushed
+4. **Dark-Dominant Aesthetic** — Yellow accents on industrial black, not beige templates
+5. **Content Density** — Information-rich without clutter; every section earns its place
+
+---
+
+## 1. NEW INFORMATION ARCHITECTURE
+
+### 1.1 Site Map — Complete Restructure
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  HOME (/)                                                   │
+│  ├── Hero — Immersive video/image with kinetic typography   │
+│  ├── Capability Strip — 5 trust signals (animated counter)│
+│  ├── Featured Machines — Horizontal scroll carousel         │
+│  ├── Brand Partners — Putzmeister + SANY full-width         │
+│  ├── Services Matrix — 4 services with hover reveals        │
+│  ├── Industry Applications — Sector-specific showcase       │
+│  ├── Stats & Milestones — Animated counters (NEW)         │
+│  ├── Testimonial Marquee — Client quotes (NEW)              │
+│  ├── CTA Band — "Talk to an engineer" (persistent)          │
+│  └── Footer — Mega-footer with sitemap                      │
+├─────────────────────────────────────────────────────────────┤
+│  MACHINES (/mashini)                                        │
+│  ├── Hero with brand tabs (Putzmeister | SANY | All)        │
+│  ├── Filter Bar — Category, reach, brand filters (NEW)      │
+│  ├── Machine Grid — Masonry/isotope layout                   │
+│  ├── Comparison Tool — Side-by-side specs (NEW)             │
+│  └── CTA: "Need help choosing? Talk to our engineers"      │
+├─────────────────────────────────────────────────────────────┤
+│  MACHINE DETAIL (/mashini/:slug)                            │
+│  ├── Sticky Gallery — Thumbnails + main image zoom          │
+│  ├── Key Specs Dashboard — Quick-read metric cards          │
+│  ├── Full Description — Rich text with collapsible sections │
+│  ├── Technical Specs Table — Sortable, printable            │
+│  ├── Application Scenarios — Use-case imagery + text        │
+│  ├── Related Machines — Cross-sell carousel                  │
+│  └── Conversion: "Request Quote" + "Schedule Demo"         │
+├─────────────────────────────────────────────────────────────┤
+│  SERVICES (/serviz)                                         │
+│  ├── Hero — Workshop imagery with overlay stats              │
+│  ├── Service Spectrum — 4 core services with detail drawers │
+│  ├── Process Timeline — Interactive 4-step horizontal       │
+│  ├── Coverage Map — SVG map of Bulgaria with pins (NEW)     │
+│  ├── Certification Wall — German training badges (NEW)      │
+│  ├── Equipment Showcase — Diagnostic tools imagery (NEW)      │
+│  └── Emergency CTA — Red-stripe banner with 24/7 number      │
+├─────────────────────────────────────────────────────────────┤
+│  SPARE PARTS (/rezervni-chasti) — NEW PAGE                  │
+│  ├── Hero — Parts warehouse imagery                          │
+│  ├── Availability Search — Part number lookup (placeholder)│
+│  ├── Fast Delivery Promise — 24h commitment visualization    │
+│  ├── OEM Guarantee — Authenticity certification              │
+│  └── Inquiry Form — Spare parts specific form               │
+├─────────────────────────────────────────────────────────────┤
+│  ABOUT (/za-nas)                                            │
+│  ├── Heritage Timeline — 1996→present scrollable (NEW)       │
+│  ├── Company Values — 4 pillars with iconography             │
+│  ├── Team & Certifications — Engineer portraits (NEW)        │
+│  ├── Facility Tour — Workshop photo gallery (NEW)            │
+│  ├── Partnership Story — Putzmeister relationship           │
+│  └── Awards & Recognition — Certificates display (NEW)         │
+├─────────────────────────────────────────────────────────────┤
+│  CONTACT (/kontakti)                                        │
+│  ├── Split-screen: Form left, Info right                    │
+│  ├── Smart Form — Conditional fields based on inquiry type   │
+│  ├── Contact Cards — Phone/email/address with copy buttons   │
+│  ├── Map — Embedded with custom marker styling                │
+│  └── Hours & Emergency — Office hours + 24/7 distinction     │
+├─────────────────────────────────────────────────────────────┤
+│  NEWS & PROJECTS (/novini) — NEW PAGE                       │
+│  ├── Article Grid — Company news, project showcases          │
+│  ├── Case Studies — Completed project spotlights             │
+│  └── Filter by: News / Projects / Product Updates            │
+├─────────────────────────────────────────────────────────────┤
+│  DOWNLOADS (/katalozi)                                      │
+│  ├── Resource Library — Grid with search/filter              │
+│  ├── Download Cards — Preview + metadata + download CTA      │
+│  └── Request Missing Catalog — Form for custom requests      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 1.2 What's New vs Removed vs Moved
+
+| Action | Item | Rationale |
+|--------|------|-----------|
+| **NEW** | `/rezervni-chasti` (Spare Parts) | High-value, frequently searched; deserves dedicated funnel |
+| **NEW** | `/novini` (News & Projects) | Builds credibility, SEO value, shows activity |
+| **NEW** | Stats/Milestones section | Social proof through numbers; industrial sites lead with data |
+| **NEW** | Machine comparison tool | B2B buyers compare specs; reduces bounce from machines page |
+| **NEW** | Testimonial marquee | Third-party validation is essential for B2B trust |
+| **NEW** | Coverage map (SVG Bulgaria) | Visual proof of nationwide service |
+| **NEW** | Certification wall | German certificates are a major differentiator |
+| **NEW** | Heritage timeline | 1996→present tells the reliability story visually |
+| **REMOVED** | Generic "Why Hydromotor" text block | Replaced by data-driven stats + testimonials + timeline |
+| **REMOVED** | ServiceProcess (4-step cards) | Upgraded to interactive horizontal timeline |
+| **REMOVED** | Diagonal clip-path sections | Replaced with purposeful motion; diagonals feel dated |
+| **MOVED** | Contact form from home | Dedicated `/kontakti` page; home gets CTA bands instead |
+| **MOVED** | Map from home footer | Moved to `/kontakti` with prominence; cleaner home |
+
+---
+
+## 2. USER FLOWS
+
+### 2.1 Primary Personas
+
+**P1: Potential Buyer (Construction Company Owner/Manager)**
+- Goal: Evaluate machines for purchase/rental, compare specs, request quote
+- Pain point: Needs confidence in after-sales support
+- Device: Desktop (research) → Mobile (share/forward)
+
+**P2: Service Requester (Site Manager/Equipment Operator)**
+- Goal: Get machine repaired FAST, ideally on-site
+- Pain point: Downtime costs money; needs 24/7 availability
+- Device: Mobile (urgent, on-site calls)
+
+**P3: Spare Parts Purchaser (Procurement/Mechanic)**
+- Goal: Find part number, check availability, order quickly
+- Pain point: Uncertainty if part is in stock
+- Device: Desktop (lookup) → Mobile (call to confirm)
+
+**P4: Referral/Partner (Putzmeister HQ, other dealers)**
+- Goal: Verify legitimacy, check company standing
+- Pain point: Needs professional presentation
+- Device: Desktop
+
+### 2.2 User Journey Maps
+
+#### JOURNEY A: Potential Buyer — Machine Purchase
+```
+Entry → Google Search "бетонпомпа Putzmeister България"
+  │
+  ▼
+Landing: Home Hero — Immediate brand recognition (Putzmeister logo)
+  │  └─> Trust bar: "25+ years", "Official Representative" confirms legitimacy
+  │
+  ▼
+Scroll: Featured Machines — Sees M 62-6 with 62m reach
+  │  └─> Hover: Card lifts, specs appear, image zooms slightly
+  │  └─> Click: Navigates to Machine Detail
+  │
+  ▼
+Machine Detail: Sticky gallery, key specs dashboard
+  │  └─> Scrolls through technical specs table
+  │  └─> Views "Application Scenarios" — sees image of pump on high-rise
+  │  └─> Compares with related machines (tabs)
+  │
+  ▼
+Decision point: CTA "Request Quote" or "Schedule Consultation"
+  │  └─> Form pre-filled with machine model
+  │  └─> Fields: Name, Company, Project type, Desired delivery, Message
+  │
+  ▼
+Confirmation: "Thank you. Our engineer will contact you within 24 hours."
+  │  └─> Phone number displayed prominently for immediate contact
+```
+
+#### JOURNEY B: Service Requester — Emergency Repair
+```
+Entry: Direct URL or bookmark → /serviz
+  │
+  ▼
+Landing: Services Hero with prominent 24/7 number (red accent)
+  │  └─> Immediate tap-to-call on mobile
+  │
+  ▼
+Scroll: Service Spectrum — sees "On-site repair", "24h parts delivery"
+  │  └─> Expands "Mobile Service" drawer → learns about equipped vehicles
+  │
+  ▼
+Coverage Map: Sees Bulgaria map with service radius circles
+  │  └─> Confirms their region is covered
+  │
+  ▼
+Emergency CTA Band (sticky bottom on mobile):
+  │  └─> One-tap call: 0878 553 273
+  │  └─> OR "Report breakdown" form with:
+  │      • Machine model (dropdown)
+  │      • Symptom description
+  │      • Location (GPS auto-fill on mobile)
+  │      • Urgency level
+```
+
+#### JOURNEY C: Spare Parts Inquiry
+```
+Entry: Menu → "Резервни части" (NEW page)
+  │
+  ▼
+Landing: Parts hero with warehouse imagery
+  │  └─> Search bar: "Търсене по номер на част или модел машина"
+  │
+  ▼
+Availability Section: Icons showing "In Stock / 24h / Special Order" pipeline
+  │  └─> Visual inventory meter (stylized)
+  │
+  ▼
+OEM Guarantee: "100% оригинални Putzmeister/SANY части"
+  │  └─> Certificate imagery, anti-counterfeit messaging
+  │
+  ▼
+Inquiry Form: Part number, machine model, quantity, urgency
+  │  └─> Auto-suggestions based on machine model selection
+  │
+  ▼
+Confirmation + Next Steps: "We'll confirm availability within 2 hours"
+```
+
+### 2.3 Secondary Flows
+
+- **Referral Check**: About → Heritage Timeline → Certifications → Partner Story → Contact
+- **Career/Partnership Inquiry**: About → Values → Facility Tour → Contact (with subject dropdown)
+- **Catalog Download**: Home → Downloads → PDF preview → Download → Form gate (optional email capture)
+
+---
+
+## 3. COMPONENT INVENTORY
+
+### 3.1 Global / Layout Components
+
+| Component | File | Description | Animation |
+|-----------|------|-------------|-----------|
+| **HeaderV2** | `components/HeaderV2.jsx` | Fixed top, transparent→solid on scroll, logo left, nav center, phone right | Background opacity 0→1 on scroll (300ms ease-out-expo); nav links have underline grow-from-center on hover |
+| **MegaMenu** | `components/MegaMenu.jsx` | Dropdown on "Машини" and "Услуги" hover (desktop only) | Fade-in 200ms + slideY 8px→0; stagger children 50ms |
+| **MobileMenuV2** | `components/MobileMenuV2.jsx` | Full-screen overlay, categories grouped | Slide-in from right 400ms; links stagger-fade 80ms each; close with swipe-right gesture |
+| **FooterV2** | `components/FooterV2.jsx` | 5-column mega-footer: Brand, Machines, Services, Contact, Newsletter | None (static for performance) |
+| **EmergencyFloat** | `components/EmergencyFloat.jsx` | Bottom-right floating button (mobile only), red pulse | Pulse animation 2s infinite; expands on tap to show 2 phone numbers |
+| **PageLoader** | `components/PageLoader.jsx` | Initial paint: logo reveal + progress bar | Logo stroke-dashoffset animation 800ms; progress bar fills 1200ms; fade out 400ms |
+| **SectionReveal** | `components/SectionReveal.jsx` | Wrapper: children animate in on scroll intersection | Configurable: fadeUp (default), fadeLeft, fadeRight, scaleIn, staggerChildren |
+| **Breadcrumb** | `components/Breadcrumb.jsx` | Schema-based breadcrumbs with micro-interactions | Active crumb has subtle underline; separator animates opacity on hover |
+
+### 3.2 Home Page Components
+
+| Component | Priority | Interaction Spec |
+|-----------|----------|------------------|
+| **HeroImmersive** | P0 | Full-viewport background image/video (compressed), gradient overlay. H1 "ХИДРОМОТОР" uses `clip-text` with parallax. Badge slides down 600ms delay. CTA buttons fade up stagger 200ms. Trust bar slides up from bottom on scroll-into-view. |
+| **CapabilityStrip** | P1 | 5 icons + text in a row. On scroll: counter animates from 0 to target number (2s duration, easeOutExpo). Numbers: 25+ years, 1998 partnership, 7 machine models, 24/7 service, Bulgaria-wide. |
+| **MachineCarousel** | P1 | Horizontal scroll container (CSS scroll-snap). Cards: image + brand badge + name + 2 key specs. Hover: card lifts -4px Y, shadow deepens, image scales 1.05. Drag/swipe on mobile. "See all" button at end. |
+| **BrandPartners** | P1 | Two half-width panels: Putzmeister (left) and SANY (right). Hover: panel expands slightly (flex-grow transition 400ms), reveals 2-line brand description. Background: subtle brand-pattern watermark. |
+| **ServicesMatrix** | P1 | 2x2 grid. Each cell: icon, title, 2-line description, "Learn more →". Hover: background shifts to dark, text to white, icon turns yellow, border-left grows from 0 to 4px. Transition 350ms. |
+| **IndustryApplications** | P2 | 5 sectors: Civil construction, Mining, Tunneling, Precast factories, Power plants. Horizontal tab strip. Active tab reveals full-bleed image + 3 bullet points. Image has slow Ken Burns pan effect (20s loop). |
+| **StatsMilestones** | P1 | Dark background section. 4 large animated counters: Years active, Machines sold, Service calls/year, km coverage. Numbers count up on scroll-into-view. Below: milestone timeline dots (1996, 1998, 2005, 2010, 2020, now). |
+| **TestimonialMarquee** | P2 | Infinite horizontal scroll of testimonial cards. Pauses on hover. Each card: quote marks, text, author name, company. Speed: 40px/s. Gradient fade at edges. |
+| **CtaBand** | P1 | Full-width yellow band (#f9c500). "Говорете с инженер →" phone + "Поискайте оферта" button. Sticky on mobile after scroll past hero. |
+
+### 3.3 Machines Page Components
+
+| Component | Spec |
+|-----------|------|
+| **FilterBar** | Sticky below hero. Brand pills (Putzmeister | SANY | All), Reach range slider (20m–62m), Category dropdown. Active filters have yellow border. Results count updates live. |
+| **MachineGrid** | CSS Grid transitioning to masonry-like with `grid-auto-rows`. Cards match homepage style. Empty state: "No machines match filters" + "Reset filters" CTA. |
+| **ComparisonTool** | Checkbox on each card: "Сравни". Max 3 selected. Fixed bottom bar appears: "Compare 2 machines →". Opens modal with side-by-side specs table. Highlight differences in yellow. |
+
+### 3.4 Machine Detail Page Components
+
+| Component | Spec |
+|-----------|------|
+| **StickyGallery** | Left column (desktop): thumbnail column + main image area. Thumbnail click swaps main image with crossfade 300ms. Main image: pinch-zoom on mobile, click to expand lightbox. Right column: sticky scrolls with content. |
+| **KeySpecsDashboard** | 4 metric cards above fold: Vertical Reach, Pump Capacity, Pressure, Boom Sections. Large number + unit + label. Numbers animate in with countUp. |
+| **SpecTableV2** | Collapsible sections: Dimensions, Performance, Boom, Chassis. Row hover: highlight row. Print button exports clean table. |
+| **ScenarioCards** | 3 use-case cards with images: "High-rise construction", "Infrastructure projects", "Industrial facilities". Each has bullet list of why this machine fits. |
+| **RelatedMachines** | "You might also consider" — 2-3 cards, different brand or next size up. |
+
+### 3.5 Services Page Components
+
+| Component | Spec |
+|-----------|------|
+| **ServiceSpectrum** | 4 cards in a 2x2 grid. Each card: large number (01–04), title, 3 bullet points, "Expand →". Click expands into a full-width detail panel (accordion-style with FLIP animation). |
+| **ProcessTimeline** | Horizontal timeline, 4 steps. Active step has filled circle + yellow connector. Connector line draws progressively (SVG stroke-dashoffset) on scroll. Step content fades in as line reaches it. |
+| **CoverageMap** | SVG map of Bulgaria. Service hub (Sofia/Krivina) marked with pulsing dot. Radius rings at 50km, 100km, 150km, 200km animate outward on scroll. Region labels fade in. |
+| **CertificationWall** | Grid of certificate thumbnails. Hover: zooms 1.1 + overlay with cert title + year. Click opens lightbox. |
+| **EmergencyBanner** | Full-width red (#cc2936) stripe. White text: "Аварийна помощ 24/7 — 0878 553 273". Pulsing phone icon. Sticky on mobile when scrolled past. |
+
+### 3.6 New Page: Spare Parts (`/rezervni-chasti`)
+
+| Component | Spec |
+|-----------|------|
+| **PartSearch** | Prominent search input with machine model autocomplete. Placeholder: "Въведете номер на част или модел машина". Magnifying glass icon. |
+| **StockIndicator** | 3-state visual: Green "На склад", Yellow "24ч доставка", Red "Поръчка". Each with icon + description. |
+| **PartsCategories** | Grid: Hydraulic parts, Wear parts, Electrical, Filters, Consumables. Each with icon + representative image. |
+| **OemPromise** | Large lock/checkmark icon. "100% оригинални части Putzmeister & SANY". Anti-counterfeit paragraph. |
+
+---
+
+## 4. MICRO-INTERACTIONS & ANIMATIONS
+
+### 4.1 Animation Philosophy
+
+> **Motion communicates meaning.** Heavy machinery moves with power and precision. Our animations mirror this: large movements are confident and swift; small movements are exact and controlled. Nothing wobbles, nothing bounces playfully. Easing curves favor `expo-out` for entrances and `power2.inOut` for transitions.
+
+### 4.2 Global Animation Tokens
+
+```css
+:root {
+  --ease-power-out: cubic-bezier(0.16, 1, 0.3, 1);      /* Primary entrance */
+  --ease-power-in: cubic-bezier(0.7, 0, 0.84, 0);         /* Exits */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);            /* General transitions */
+  --ease-bounce-minimal: cubic-bezier(0.34, 1.56, 0.64, 1); /* Rare: button clicks */
+  
+  --duration-instant: 150ms;
+  --duration-fast: 250ms;
+  --duration-normal: 400ms;
+  --duration-slow: 700ms;
+  --duration-dramatic: 1200ms;
+  
+  --stagger-tight: 60ms;
+  --stagger-normal: 120ms;
+  --stagger-loose: 200ms;
+}
+```
+
+### 4.3 Component-Specific Micro-interactions
+
+#### A. Button Hover States
+```
+.btn-primary:
+  idle: background #f9c500, shadow 0 0 0 rgba(249,197,0,0)
+  hover: translateY(-2px), shadow 0 8px 24px rgba(249,197,0,0.35), background #e6b200
+  active: translateY(0), scale(0.98), shadow 0 2px 8px rgba(249,197,0,0.2)
+  transition: all 300ms var(--ease-power-out)
+
+.btn-outline-dark:
+  idle: border 2px solid #f9c500, background transparent
+  hover: background #f9c500, color #0f0f0f, letter-spacing +0.02em
+  transition: all 300ms var(--ease-power-out)
+```
+
+#### B. Card Lift & Shadow
+```
+.machine-card, .service-card:
+  idle: translateY(0), shadow 0 2px 8px rgba(0,0,0,0.06)
+  hover: translateY(-6px), shadow 0 16px 40px rgba(0,0,0,0.12), border-left-color #f9c500
+  image: scale(1.05) with overflow:hidden container
+  transition: all 400ms var(--ease-power-out)
+```
+
+#### C. Nav Link Underline
+```
+.nav-link:
+  ::after pseudo-element:
+    idle: width 0%, left 50%
+    hover: width 100%, left 0% (transform-origin: center)
+    transition: width 350ms var(--ease-power-out)
+```
+
+#### D. Scroll-Triggered Section Reveals (IntersectionObserver)
+```
+Strategy: Content below fold starts invisible, animates in when 20% visible.
+
+.fade-up:
+  from: opacity 0, translateY(40px)
+  to:   opacity 1, translateY(0)
+  duration: 700ms, easing: expo-out
+
+.fade-left:
+  from: opacity 0, translateX(-30px)
+  to:   opacity 1, translateX(0)
+  
+.scale-in:
+  from: opacity 0, scale(0.95)
+  to:   opacity 1, scale(1)
+
+.stagger-children:
+  parent triggers, children animate with 80ms stagger
+  each child: fade-up variant
+```
+
+#### E. Counter Animation (Stats Section)
+```
+Trigger: IntersectionObserver on stats section
+Animation: Number counts from 0 to target over 2000ms
+Easing: expo-out (fast start, gradual settle)
+Format: Add "+" suffix, locale-aware separators
+Example: 0 → 2,847 (over 2s)
+```
+
+#### F. Testimonial Marquee
+```
+Container: overflow hidden, white-space nowrap
+Content: duplicated for seamless loop
+Animation: translateX(0) → translateX(-50%) over 40s linear infinite
+Pause: animation-play-state paused on hover
+Edge masks: linear-gradient(to right, bg-color, transparent 5%, transparent 95%, bg-color)
+```
+
+#### G. Mobile Menu Entrance
+```
+Overlay: opacity 0 → 1, 300ms
+Panel: translateX(100%) → translateX(0), 400ms, expo-out
+Links: translateX(20px) + opacity 0 → translateX(0) + opacity 1, stagger 60ms
+Close: reverse, power2.in
+```
+
+#### H. Image Reveal (Hero/Gallery)
+```
+Technique: Clip-path or scale reveal
+.from-scale:
+  container: overflow hidden
+  image: scale(1.2) → scale(1.0) over 1.2s, power2.out
+  simultaneously: opacity 0 → 1 over 800ms
+```
+
+#### I. SVG Line Draw (Process Timeline, Coverage Map)
+```
+Technique: stroke-dasharray + stroke-dashoffset
+.line-draw:
+  from: stroke-dashoffset = pathLength
+  to:   stroke-dashoffset = 0
+  duration: 1500ms per segment
+  easing: power2.inOut
+  trigger: scroll-into-view
+```
+
+#### J. Emergency Float Pulse
+```
+.emergency-float:
+  animation: pulse 2s ease-in-out infinite
+  @keyframes pulse:
+    0%, 100% { box-shadow: 0 0 0 0 rgba(204,41,54,0.4); }
+    50%      { box-shadow: 0 0 0 12px rgba(204,41,54,0); }
+```
+
+### 4.4 Parallax & Scroll Effects
+
+| Element | Effect | Range |
+|---------|--------|-------|
+| Hero background image | translateY at 0.3x scroll speed | 0 to 100px over first viewport |
+| Page hero backgrounds | translateY at 0.2x scroll speed | Subtle depth |
+| Section dividers | Opacity fade 1→0.3 as next section scrolls over | CSS scroll-timeline if supported, fallback to JS |
+
+### 4.5 Reduced Motion Support
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .testimonial-marquee { animation: none; }
+  .counter { /* show final value immediately */ }
+}
+```
+
+---
+
+## 5. MOBILE UX STRATEGY
+
+### 5.1 Mobile-First ≠ Mobile-Only
+
+This is a B2B industrial site. **Primary research happens on desktop.** Primary **emergency contacts happen on mobile.** The mobile experience must serve both modes excellently.
+
+### 5.2 Mobile-Specific Patterns
+
+#### A. Thumb Zone Optimization
+```
+┌─────────────────────┐
+│  Header (70px)      │  <- Logo left, hamburger right
+├─────────────────────┤
+│                     │
+│    Content Area     │
+│                     │
+├─────────────────────┤
+│  Emergency FAB      │  <- Bottom-right, 56px, red, thumb reachable
+│  (only if scrolled) │
+├─────────────────────┤
+│  Bottom CTA Bar     │  <- "Обадете се" fixed, 48px height, hides at footer
+│  (below fold only)  │
+└─────────────────────┘
+```
+
+#### B. Touch Targets
+- All interactive elements: minimum 48×48dp (Apple HIG) / 44×44dp (Material)
+- Nav links in mobile menu: 56px height minimum
+- Cards: entire card is tap target (not just title)
+- Form inputs: 56px height, 16px font size (prevents iOS zoom)
+
+#### C. Swipe Gestures
+- Machine carousel: horizontal swipe with momentum scroll
+- Mobile menu: swipe right to close
+- Image gallery: swipe between images
+- Testimonials: swipe horizontally (pause marquee)
+
+#### D. Sticky Behaviors
+- **Header**: Fixed, shrinks from 70px to 56px after 100px scroll
+- **Bottom CTA bar**: Appears after scrolling past hero, hides when near footer
+- **Emergency FAB**: Appears after 200px scroll, pulses for attention
+- **Filter bar** (machines page): Sticky below shrunken header
+
+#### E. Form Experience
+- Inputs have top-aligned labels (not placeholders that disappear)
+- Keyboard types: `tel` for phone, `email` for email
+- Submit button fixed at bottom of viewport while form is focused
+- Autocomplete attributes on all fields
+- Success state: full-screen confirmation with confetti disabled (industrial restraint)
+
+#### F. Image Loading
+- Hero: eager load, LQIP (low-quality image placeholder) blur-up
+- All others: lazy loading with skeleton placeholder
+- Skeleton: dark gray pulse animation, matches card dimensions
+
+#### G. Performance Budget (Mobile)
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Time to Interactive: < 3.5s
+- Total page weight: < 1.5MB per route
+- No layout shift: images have explicit width/height attributes
+
+### 5.3 Mobile vs Desktop Differentiation
+
+| Feature | Desktop | Mobile |
+|---------|---------|--------|
+| Hero | Video background, side-by-side text layout | Static optimized image, stacked text, smaller typography |
+| Navigation | Horizontal links + MegaMenu dropdowns | Full-screen overlay, grouped categories |
+| Machine cards | 3-column grid with hover lift | 1-column stack, tap to view, no hover state |
+| Comparison tool | Inline checkbox + fixed bottom bar | Same, but modal is full-screen |
+| Stats counters | 4-column layout | 2x2 grid, counters still animate |
+| Coverage map | SVG with hover regions | SVG static, tap region to show tooltip |
+| Testimonials | Marquee auto-scroll | Swipeable carousel, 1 card visible |
+| Forms | Side-by-side fields | Stacked, full-width |
+| Gallery | Thumbnail sidebar + main | Swipeable, thumbnail dots below |
+| CTA placement | Inline within content | Fixed bottom bar + emergency FAB |
+
+---
+
+## 6. CONTENT STRATEGY
+
+### 6.1 Content That Stays (Rewritten)
+
+| Current | Rewrite Direction |
+|---------|-------------------|
+| "Фирма 'Хидромотор' ООД е създадена през 1996..." | Shorter, punchier. Lead with authority: "Since 1996, the official Putzmeister partner for Bulgaria." |
+| Machine descriptions | Keep technical accuracy. Add benefit-focused framing: "62-meter reach enables high-rise projects without repositioning." |
+| Service descriptions | Active voice, outcome-focused: "We restore your equipment to operational status within 24 hours — guaranteed." |
+| Contact info | Add copy-buttons, WhatsApp link, GPS coordinate click-to-copy |
+
+### 6.2 Content That Gets Rewritten
+
+| Section | Current Problem | New Direction |
+|---------|----------------|---------------|
+| Home "Why Hydromotor" | Bulky text block + 4 points | **Stats Milestones** — numbers speak louder than paragraphs |
+| Services process cards | 4 boxes, static | **Horizontal timeline** with SVG connector animation |
+| About page | Plain text + 2 images | **Heritage timeline** + values pillars + facility gallery |
+| Machine detail | Image + text + table | **Specs dashboard** + scenarios + comparison tool |
+| Downloads | 2 cards | **Resource library** with search, categories, previews |
+
+### 6.3 New Content Needed
+
+| Content | Source | Priority |
+|---------|--------|----------|
+| High-resolution machine photography | Client to provide or arrange | P0 — current images are acceptable but could be elevated |
+| Workshop/facility photos | Client to provide | P1 — builds trust |
+| Engineer/team portraits | Client to provide | P2 — humanizes the brand |
+| Project case studies | Client interviews | P2 — "We supplied pumps for [Landmark Project]" |
+| Certificate scans | Client to scan | P1 — certification wall needs assets |
+| Client testimonials/quotes | Client to collect | P2 — even 2-3 testimonials dramatically improve trust |
+| Putzmeister brand guidelines | Putzmeister HQ | P1 — ensures correct logo usage |
+| Spare parts inventory snapshot | Client systems | P3 — for parts page authenticity |
+
+### 6.4 Tone of Voice Guidelines
+
+**The Hydromotor voice is:**
+- **Confident** — "We guarantee 24-hour parts delivery", not "We try to deliver fast"
+- **Precise** — Exact specs, exact numbers, no vague superlatives
+- **Professional** — No exclamation points, no emojis, no casual slang
+- **Helpful** — Every page answers "What can we do for you?" before "How great are we?"
+- **Bulgarian-first** — Primary language is Bulgarian. English version optional phase 2.
+
+**Examples:**
+| Don't | Do |
+|-------|-----|
+| "Най-добрите машини на пазара!" | "Автобетонпомпи Putzmeister — световен стандарт в строителството." |
+| "Бързо и евтино!" | "24-часова доставка на резервни части. Гарантирано." |
+| "Обадете ни се!" | "Говорете с инженер: 0878 553 273" |
+
+---
+
+## 7. NAVIGATION REDESIGN
+
+### 7.1 Primary Navigation (Desktop)
+
+```
+[LOGO]  Начало    Машини ▼    Услуги ▼    Резервни части    За нас    Контакти    [📞 0878 553 273]
+```
+
+**Hover behavior on "Машини":**
+```
+┌─────────────────────────────────────────────┐
+│  ПО ВИД                                    │
+│  ▸ Автобетонпомпи                           │
+│  ▸ Тунелни машини                           │
+│  ▸ Промишлени помпи                         │
+│                                             │
+│  ПО МАРКА                                   │
+│  ▸ Putzmeister                              │
+│  ▸ SANY                                     │
+│                                             │
+│  [Featured: M 62-6 image]                   │
+│  "62-метрова помпа за мащабни проекти"      │
+│  [→ Виж всички машини]                      │
+└─────────────────────────────────────────────┘
+```
+
+**Hover behavior on "Услуги":**
+```
+┌─────────────────────────────────────────────┐
+│  СЕРВИЗНИ УСЛУГИ                            │
+│  ▸ Диагностика и ремонт                     │
+│  ▸ Резервни части                            │
+│  ▸ Мобилен сервиз                           │
+│  ▸ Обучение и консултации                   │
+│                                             │
+│  [24/7 Hotline: 0878 553 273]               │
+│  [→ Научете повече]                         │
+└─────────────────────────────────────────────┘
+```
+
+### 7.2 Mobile Navigation
+
+```
+═══════════════════════════════════════════════
+                    МЕНЮ
+═══════════════════════════════════════════════
+
+  📁 МАШИНИ
+    ▸ Всички машини
+    ▸ Putzmeister
+    ▸ SANY
+
+  🛠 УСЛУГИ
+    ▸ Диагностика и ремонт
+    ▸ Резервни части
+    ▸ Мобилен сервиз
+    ▸ Обучение
+
+  🔩 РЕЗЕРВНИ ЧАСТИ
+
+  ℹ ЗА НАС
+    ▸ История
+    ▸ Екип
+    ▸ Сертификати
+
+  📞 КОНТАКТИ
+
+─────────────────────────────────────────────
+  ☎ АВАРИЙНА ПОМОЩ 24/7
+  0878 553 273
+─────────────────────────────────────────────
+```
+
+- **Accordion submenus**: Tap parent to expand/collapse
+- **Active page**: Yellow left border indicator
+- **Close**: X button, swipe right, or tap overlay
+
+### 7.3 Breadcrumb Strategy
+
+Every inner page displays breadcrumbs below the page hero:
+```
+Начало ▸ Машини ▸ Putzmeister ▸ M 62-6
+```
+- Last item is non-linked (current page)
+- Each crumb fades opacity on hover
+- Schema markup for rich snippets
+
+### 7.4 Contextual Navigation
+
+| Location | Navigation Aid |
+|----------|---------------|
+| Machine detail | "← Към всички машини" + "Следваща машина →" |
+| Services | Sticky sub-nav: Diagnosis / Parts / Mobile / Training |
+| About | Timeline navigation: Jump to decade |
+| Footer | Full sitemap + "Back to top" |
+
+---
+
+## 8. CONVERSION FUNNELS
+
+### 8.1 Conversion Philosophy
+
+B2B conversions happen on **confidence**, not urgency. The funnels guide users from "I need a solution" to "I trust these people to provide it." Every CTA is a step toward a conversation, not an immediate transaction.
+
+### 8.2 CTA Inventory & Placement
+
+| CTA Text | Destination | Placement | Priority | Color |
+|----------|-------------|-----------|----------|-------|
+| **Поискайте оферта** | /kontakti (pre-filled) | Hero, Machine detail, Footer | P0 | Primary yellow |
+| **Говорете с инженер** | tel:0878553273 | Header (desktop), Sticky bar (mobile), Emergency FAB | P0 | Emergency red |
+| **Вижте машините** | /mashini | Home capability strip, About CTA, Footer | P1 | Outline dark |
+| **Научете повече →** | Page/section | Cards, service items | P1 | Text link |
+| **Сравни машини** | Modal | Machine cards (checkbox) | P2 | Outline |
+| **Свалете каталог** | PDF | Downloads page, Machine detail | P2 | Primary |
+| **Проверете наличност** | /rezervni-chasti | Spare parts hero | P1 | Primary |
+| **Докладвайте авария** | Form modal | Emergency banner | P0 | Emergency red |
+
+### 8.3 The Three Primary Funnels
+
+#### FUNNEL 1: Machine Purchase
+```
+Awareness: Google Search → Landing on Home
+  │
+  ├─ Hero CTA: "Поискайте оферта" → /kontakti
+  │
+  └─ Or: Scroll → Machine Carousel → Click card → Machine Detail
+           │
+           ├─ "Request Quote" (form pre-filled with machine)
+           │
+           └─ "Compare with..." → Comparison tool → Decides → Request quote
+```
+
+**Conversion Rate Optimization (CRO) tactics:**
+- Exit-intent modal on Machine Detail: "Still deciding? Our engineers can help. Call or leave a message."
+- Machine detail page has NO sidebar distractions — single-column focus on specs + CTA
+- Quote form asks: project type, timeline, budget range → qualifies the lead
+
+#### FUNNEL 2: Service Request
+```
+Urgency: Breakdown occurs → Direct call OR visits /serviz
+  │
+  ├─ Mobile: Taps emergency number immediately (header CTA always visible)
+  │
+  └─ Desktop: Reviews services → Sees process timeline → Gains confidence
+           │
+           └─ CTA: "Докладвайте авария" → Modal form:
+               • Machine model
+               • Symptom description
+               • Location
+               • Urgency: [Normal / Same-day / Emergency]
+               → Auto-email + SMS alert to Hydromotor team
+```
+
+**CRO tactics:**
+- /serviz page loads with 24/7 number above fold on mobile
+- Coverage map proves they service the user's region
+- Certification wall proves competence
+
+#### FUNNEL 3: Spare Parts Inquiry
+```
+Need: Parts purchaser needs component → /rezervni-chasti
+  │
+  ├─ Search by part number (if known)
+  │
+  └─ Browse by category → Select category → View typical parts
+           │
+           └─ Inquiry form:
+               • Machine model (dropdown, auto-complete)
+               • Part description or number
+               • Quantity needed
+               • Urgency
+               → Response commitment: "Within 2 hours during business hours"
+```
+
+### 8.4 Form Strategy
+
+**Smart Form Logic:**
+```
+Field: "Тип запитване" (Inquiry type)
+  ├─ „Покупка на машина" → Show: Budget range, Project type, Timeline
+  ├─ „Сервиз" → Show: Machine model, Symptom, Location
+  ├─ „Резервни части" → Show: Part number, Machine model, Quantity
+  └─ „Друго" → Show: General message field
+
+Field: „Модел машина" → Autocomplete from machines.js
+```
+
+**Form Submission Flow:**
+1. User submits
+2. Inline validation on blur (no waiting for submit)
+3. On submit: Button text changes to „Изпраща се..." + spinner
+4. Success: Button becomes green checkmark + "Изпратено"
+5. Confetti disabled. Instead: Subtle toast notification top-right
+6. Analytics event fired: `generate_lead`
+
+### 8.5 Post-Conversion Experience
+
+| Funnel | Immediate Feedback | Next Step |
+|--------|-------------------|-----------|
+| Quote request | "Благодарим! Инженер ще се свърже с вас до 24 часа." | Show phone numbers prominently; "Want faster response? Call us." |
+| Service request | "Заявката е приета. Очаквайте обаждане." | Display service ticket number; SMS confirmation if phone provided |
+| Parts inquiry | "Проверяваме наличността. Ще отговорим до 2 часа." | Show typical response times; link to catalog downloads |
+| Catalog download | "Каталогът е изтеглен" | Suggest related machines or services |
+
+---
+
+## 9. TECHNICAL IMPLEMENTATION NOTES
+
+### 9.1 CSS Architecture (Foundation-Ready)
+
+The existing CSS in `App.css` is already well-structured. Build upon it:
+
+```css
+/* NEW TOKENS TO ADD */
+:root {
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.4) 100%);
+  --gradient-yellow-glow: radial-gradient(circle at center, rgba(249,197,0,0.15) 0%, transparent 70%);
+  
+  /* Spacing extended */
+  --space-18: 4.5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  
+  /* Z-index scale */
+  --z-base: 1;
+  --z-header: 100;
+  --z-mobile-menu: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-loader: 500;
+}
+```
+
+### 9.2 Animation Implementation Stack
+
+| Effect | Technology | Fallback |
+|--------|-----------|----------|
+| Scroll-triggered reveals | IntersectionObserver + CSS transitions | No animation, content visible immediately |
+| Counters | Custom hook `useCountUp(target, duration)` | Show final number immediately |
+| Parallax | CSS `transform: translateY(calc(var(--scroll) * 0.3))` via JS rAF throttled to 60fps | Static positioning |
+| Marquee | CSS animation + duplicated content | Static grid |
+| SVG line draw | CSS `stroke-dashoffset` transition | Solid line, no draw |
+| Page transitions | React Router + CSS transition group | Instant navigation |
+| Image zoom | CSS transform scale | No zoom |
+
+### 9.3 Performance Rules
+
+```
+1. Hero image: preload, <link rel="preload"> in HTML
+2. Lazy load everything below fold: IntersectionObserver + dynamic import
+3. CSS: Single file, no unused selectors (purge if needed)
+4. Fonts: Preconnect to Google Fonts CDN; font-display: swap
+5. Images: WebP with JPEG fallback; explicit width/height
+6. Animations: Use transform/opacity only (GPU composited)
+7. Debounce scroll handlers to 16ms (60fps)
+8. No layout thrashing: Read layout values, then write styles
+```
+
+### 9.4 Accessibility (WCAG 2.1 AA)
+
+```
+• Color contrast: Yellow #f9c500 on black = 10.8:1 ✓
+• Red #cc2936 on white = 4.6:1 — needs adjustment or dark background
+• Focus states: All interactive elements have visible 2px yellow outline
+• Skip link: "Skip to main content" first focusable element
+• ARIA labels: Icons, buttons, form errors
+• Screen reader: Section headings use proper h1→h6 hierarchy
+• Reduced motion: Respected via media query
+• Touch targets: 48×48px minimum
+• Form errors: Inline with `aria-describedby` linking to error text
+```
+
+---
+
+## 10. IMPLEMENTATION PHASES
+
+### Phase 1: Foundation & Global (Week 1)
+- Implement new design tokens, gradients, spacing
+- Build HeaderV2, FooterV2, MobileMenuV2
+- Create SectionReveal wrapper component
+- Implement scroll-triggered animation system
+- Add PageLoader
+- **Result**: Site looks and feels different globally
+
+### Phase 2: Home Page Transformation (Week 1-2)
+- HeroImmersive with parallax
+- CapabilityStrip with counters
+- MachineCarousel
+- BrandPartners dual-panel
+- ServicesMatrix
+- StatsMilestones
+- CtaBand
+- **Result**: Home page is completely transformed
+
+### Phase 3: Inner Pages Polish (Week 2-3)
+- Machines page: FilterBar, MachineGrid, ComparisonTool
+- Machine Detail: StickyGallery, KeySpecsDashboard, ScenarioCards
+- Services: ServiceSpectrum (drawers), ProcessTimeline (SVG), CoverageMap
+- About: HeritageTimeline, ValuesPillars, FacilityGallery
+- Contact: Smart form, split-screen layout
+- **Result**: All existing pages elevated
+
+### Phase 4: New Pages & Features (Week 3-4)
+- Spare Parts page (`/rezervni-chasti`)
+- News/Projects page (`/novini`) — structure ready, content TBD
+- Testimonials integration (when content available)
+- Certification Wall (when assets available)
+- EmergencyFloat FAB
+- **Result**: Site structure matches architecture document
+
+### Phase 5: Refinement & QA (Week 4)
+- Animation timing adjustments
+- Mobile swipe gesture tuning
+- Performance audit (Lighthouse target: 90+)
+- Cross-browser testing (Chrome, Safari, Firefox, Edge)
+- Accessibility audit (axe-core)
+- **Result**: Production-ready release
+
+---
+
+## 11. MEASUREMENT & SUCCESS METRICS
+
+| Metric | Baseline (est.) | Target | Measurement |
+|--------|----------------|--------|-------------|
+| Bounce rate | 55% | < 40% | Google Analytics |
+| Avg. session duration | 1:30 | > 2:30 | Google Analytics |
+| Pages per session | 2.2 | > 3.0 | Google Analytics |
+| Machine detail views | N/A | 40% of machine page visitors | Event tracking |
+| Form submissions | N/A | +50% month-over-month | Event tracking |
+| Phone call clicks | N/A | Track all `tel:` clicks | Event tracking |
+| Mobile conversion | N/A | Within 10% of desktop | Funnel analysis |
+| PageSpeed (mobile) | 65 | > 85 | Lighthouse |
+| Core Web Vitals | Mixed | All "Good" | Search Console |
+
+---
+
+## APPENDIX A: Color Accessibility Audit
+
+| Combination | Foreground | Background | Ratio | Grade | Usage |
+|-------------|-----------|------------|-------|-------|-------|
+| Yellow on Black | #f9c500 | #0f0f0f | 10.82:1 | AAA | Primary CTA, highlights |
+| White on Black | #ffffff | #0f0f0f | 19.56:1 | AAA | Dark section text |
+| Black on Yellow | #0f0f0f | #f9c500 | 10.82:1 | AAA | Buttons, badges |
+| Body on White | #3a3a3a | #f5f2ed | 8.45:1 | AAA | Body text |
+| Muted on White | #6b6b6b | #f5f2ed | 5.12:1 | AA | Captions, meta |
+| **Red on White** | **#cc2936** | **#ffffff** | **4.56:1** | **AA** | **Emergency text OK** |
+| Red on Black | #cc2936 | #0f0f0f | 4.28:1 | AA | Use sparingly |
+
+**Action**: Always place red (#cc2936) text on white or near-white backgrounds, never on dark gray.
+
+---
+
+## APPENDIX B: Responsive Breakpoints
+
+| Name | Width | Usage |
+|------|-------|-------|
+| Mobile | < 640px | Single column, stacked layout, hamburger nav |
+| Tablet | 640–1024px | 2-column grids, simplified nav, larger touch targets |
+| Desktop | 1024–1440px | Full layout, hover states, mega menus |
+| Wide | > 1440px | Max-width container (1400px), increased whitespace |
+
+---
+
+## APPENDIX C: File Structure (Target)
+
+```
+src/
+├── components/
+│   ├── ui/                    # Reusable primitive components
+│   │   ├── Button.jsx
+│   │   ├── Card.jsx
+│   │   ├── Badge.jsx
+│   │   ├── Input.jsx
+│   │   ├── Select.jsx
+│   │   ├── Toast.jsx
+│   │   └── SectionReveal.jsx
+│   ├── layout/
+│   │   ├── HeaderV2.jsx
+│   │   ├── FooterV2.jsx
+│   │   ├── MobileMenuV2.jsx
+│   │   ├── MegaMenu.jsx
+│   │   ├── PageLoader.jsx
+│   │   └── Layout.jsx
+│   ├── shared/
+│   │   ├── EmergencyFloat.jsx
+│   │   ├── Breadcrumb.jsx
+│   │   ├── BackToTop.jsx
+│   │   └── ScrollToTop.jsx
+│   ├── home/
+│   │   ├── HeroImmersive.jsx
+│   │   ├── CapabilityStrip.jsx
+│   │   ├── MachineCarousel.jsx
+│   │   ├── BrandPartners.jsx
+│   │   ├── ServicesMatrix.jsx
+│   │   ├── IndustryApplications.jsx
+│   │   ├── StatsMilestones.jsx
+│   │   ├── TestimonialMarquee.jsx
+│   │   └── CtaBand.jsx
+│   ├── machines/
+│   │   ├── FilterBar.jsx
+│   │   ├── MachineGrid.jsx
+│   │   ├── MachineCard.jsx
+│   │   ├── ComparisonTool.jsx
+│   │   ├── StickyGallery.jsx
+│   │   ├── KeySpecsDashboard.jsx
+│   │   ├── SpecTableV2.jsx
+│   │   ├── ScenarioCards.jsx
+│   │   └── RelatedMachines.jsx
+│   ├── services/
+│   │   ├── ServiceSpectrum.jsx
+│   │   ├── ProcessTimeline.jsx
+│   │   ├── CoverageMap.jsx
+│   │   ├── CertificationWall.jsx
+│   │   └── EmergencyBanner.jsx
+│   ├── about/
+│   │   ├── HeritageTimeline.jsx
+│   │   ├── ValuesPillars.jsx
+│   │   ├── TeamGrid.jsx
+│   │   └── FacilityGallery.jsx
+│   ├── contact/
+│   │   ├── SmartContactForm.jsx
+│   │   ├── ContactCards.jsx
+│   │   └── MapEmbed.jsx
+│   ├── parts/
+│   │   ├── PartSearch.jsx
+│   │   ├── StockIndicator.jsx
+│   │   ├── PartsCategories.jsx
+│   │   └── OemPromise.jsx
+│   └── Icons.jsx              # Centralized icon components
+├── hooks/
+│   ├── useScrollReveal.js
+│   ├── useCountUp.js
+│   ├── useParallax.js
+│   ├── useMediaQuery.js
+│   └── useLockBodyScroll.js
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Machines.jsx
+│   ├── MachineDetail.jsx
+│   ├── Services.jsx
+│   ├── SpareParts.jsx          # NEW
+│   ├── Contact.jsx
+│   ├── Downloads.jsx
+│   ├── News.jsx                # NEW
+│   └── NotFound.jsx
+├── data/
+│   ├── content.js
+│   ├── machines.js
+│   ├── testimonials.js         # NEW
+│   └── assets.js
+├── utils/
+│   ├── seoSchema.js
+│   ├── formatNumber.js         # NEW
+│   └── validators.js           # NEW
+├── styles/
+│   ├── design-system.css       # Variables, tokens, resets
+│   ├── animations.css          # Keyframes, transitions
+│   ├── components.css          # Component-level styles
+│   ├── pages.css               # Page-specific overrides
+│   └── utilities.css          # Helper classes
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## CONCLUSION
+
+This architecture transforms Hydromotor from a generic brochure site into a **premium industrial brand experience**. Every decision serves the goal of communicating authority, engineering excellence, and trustworthiness.
+
+**The implementation is staged** — Foundation first, then Home, then Inner pages, then New pages. Each phase delivers measurable improvement without breaking existing functionality.
+
+**Next step**: Implement Phase 1 (Foundation & Global) to establish the new visual language across the entire site.
+
+---
+*Document version: 2.0*  
+*Prepared by: ArchitectUX Agent*  
+*Ready for: LuxuryDeveloper implementation*

@@ -1,79 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IconFileText, IconWrench, IconChevronDown, IconFactory, IconHandshake, IconPackage, IconPhone, IconMapPin, IconShield } from './Icons';
+import { IconPhone, IconChevronDown } from './Icons';
 import { asset } from '../data/assets';
 
-const trustItems = [
-  { icon: IconFactory, title: '25+ ГОДИНИ ОПИТ', sub: 'Основана през 1996 г.' },
-  { icon: IconHandshake, title: 'ОФИЦИАЛЕН ПАРТНЬОР', sub: 'Putzmeister от 1998 г.' },
-  { icon: IconPackage, title: 'РЕЗЕРВНИ ЧАСТИ', sub: 'Налични на склад' },
-  { icon: IconMapPin, title: '24/7 ПОДДРЪЖКА', sub: 'Сервиз в цяла България' },
-  { icon: IconShield, title: 'КАЧЕСТВО И НАДЕЖДНОСТ', sub: 'Ремонт в хале и на място' },
+const authority = [
+  { value: '1996', label: 'основана компанията' },
+  { value: '1998', label: 'представител на Putzmeister' },
+  { value: '24/7', label: 'сервизна подкрепа' },
 ];
 
-function Hero() {
+export default function Hero() {
   return (
-    <section className="hero" id="hero"
-      style={{
-        backgroundImage: `url(${asset('images/hero-concrete-pump-sharp.jpg')})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 30%',
-      }}
-    >
-      <div className="hero-overlay" />
+    <section className="cinema-hero" id="hero">
+      <div className="cinema-hero__media" data-parallax="36" aria-hidden="true">
+        <img src={asset('images/cinematic/hero-industrial.webp')} alt="" fetchPriority="high" />
+      </div>
+      <div className="cinema-hero__shade" aria-hidden="true" />
+      <div className="cinema-hero__grid" aria-hidden="true" />
+      <div className="cinema-hero__beam" aria-hidden="true" />
 
-      <div className="hero-inner">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span className="hero-badge-short">Putzmeister — Официален партньор</span>
-            <span className="hero-badge-long">Официален представител на Putzmeister за България</span>
-          </div>
-
-          <h1>ХИДРОМОТОР</h1>
-
-          <p className="hero-subtitle">
-            Вашият партньор в <strong className="hero-highlight">строителството</strong>
-          </p>
-
-          <p className="hero-body">
-            Бетонпомпи, тунелни машини, промишлени помпи, резервни части и професионален сервиз.
-          </p>
-
-          <div className="hero-actions">
-            <Link to="/kontakti" className="btn btn-primary btn-cta">
-              <IconFileText size={18} /> ПОИСКАЙ ОФЕРТА
-            </Link>
-            <a href="tel:0878553273" className="btn btn-outline-light btn-cta">
-              <IconWrench size={18} /> 24/7 СЕРВИЗ
-            </a>
-          </div>
+      <div className="container cinema-hero__content">
+        <div className="cinema-hero__eyebrow hero-enter hero-enter--1">
+          <span className="status-dot" /> Официален представител на Putzmeister
+        </div>
+        <h1 className="hero-enter hero-enter--2">
+          <span>Сила за</span>
+          <em>строителството.</em>
+        </h1>
+        <p className="cinema-hero__copy hero-enter hero-enter--3">
+          Бетонпомпи, индустриални решения и сервизна експертиза за проекти без компромис.
+        </p>
+        <div className="cinema-hero__actions hero-enter hero-enter--4">
+          <Link to="/mashini" className="btn btn-primary btn-arrow">
+            Разгледайте машините <span aria-hidden="true">↗</span>
+          </Link>
+          <a href="tel:0878553273" className="btn btn-ghost-light">
+            <IconPhone size={17} /> 24/7 сервиз
+          </a>
         </div>
       </div>
 
-      {/* Trust bar below hero */}
-      <div className="hero-trust-bar">
-        {trustItems.map((item, i) => {
-          const Icon = item.icon;
-          return (
-            <div className="hero-trust-item" key={i}>
-              <div className="hero-trust-icon">
-                <Icon size={22} />
-              </div>
-              <div className="hero-trust-text">
-                <span className="hero-trust-title">{item.title}</span>
-                <span className="hero-trust-sub">{item.sub}</span>
-              </div>
-            </div>
-          );
-        })}
+      <div className="cinema-hero__rail" aria-label="Ключови факти">
+        {authority.map((item, index) => (
+          <div className="hero-rail-item hero-enter" style={{ '--hero-delay': `${680 + index * 110}ms` }} key={item.value}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
       </div>
 
-      {/* Scroll indicator */}
-      <div className="hero-scroll-indicator">
-        <IconChevronDown size={20} />
-      </div>
+      <a href="#machines" className="cinema-hero__scroll" aria-label="Към съдържанието">
+        <span>SCROLL</span>
+        <IconChevronDown size={16} />
+      </a>
+      <span className="cinema-hero__coordinate" aria-hidden="true">42.67459° N · 23.46723° E</span>
     </section>
   );
 }
-
-export default Hero;

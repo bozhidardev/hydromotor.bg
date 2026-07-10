@@ -1,76 +1,94 @@
-import React, { useEffect, useRef } from 'react';
-import { Outlet } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
+import Footer from './Footer';
 import MobileCtaBar from './MobileCtaBar';
 import BackToTop from './BackToTop';
-import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
-function useScrollReveal() {
+function useCinematicMotion() {
   const location = useLocation();
-  const observerRef = useRef(null);
 
   useEffect(() => {
-    const revealAll = (elements) => {
-      elements.forEach((el) => el.classList.add('revealed'));
-    };
-
-    const elements = Array.from(document.querySelectorAll('.scroll-reveal'));
-    if (elements.length === 0) {
-      return undefined;
-    }
-
-    if (!('IntersectionObserver' in window)) {
-      revealAll(elements);
-      return undefined;
-    }
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observerRef.current.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements = Array.from(
+      document.querySelectorAll('.cinema-reveal, .cinema-image-reveal, .scroll-reveal')
     );
 
-    elements.forEach((el) => observerRef.current.observe(el));
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((element) => element.classList.add('is-visible', 'revealed'));
+      return undefined;
+    }
 
-    // Fallback: never leave content hidden if observer misses a frame.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible', 'revealed');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+
+    revealElements.forEach((element, index) => {
+      element.style.setProperty('--reveal-order', index % 6);
+      observer.observe(element);
+    });
+
     const failSafe = window.setTimeout(() => {
-      elements.forEach((el) => {
-        if (!el.classList.contains('revealed')) {
-          el.classList.add('revealed');
-        }
-      });
-    }, 1200);
+      revealElements.forEach((element) => element.classList.add('is-visible', 'revealed'));
+    }, 1800);
 
     return () => {
       window.clearTimeout(failSafe);
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      observer.disconnect();
+    };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (window.matchMedia('(max-width: 767px)').matches) return undefined;
+
+    let frame = null;
+    const update = () => {
+      frame = null;
+      const viewport = window.innerHeight || 1;
+      document.querySelectorAll('[data-parallax]').forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const progress = (rect.top + rect.height / 2 - viewport / 2) / viewport;
+        const amount = Number(element.dataset.parallax || 24);
+        element.style.setProperty('--parallax-y', `${progress * amount}px`);
+      });
+    };
+    const onScroll = () => {
+      if (frame === null) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame !== null) window.cancelAnimationFrame(frame);
     };
   }, [location.pathname]);
 }
 
-function Layout() {
-  useScrollReveal();
+export default function Layout() {
+  useCinematicMotion();
 
   return (
-    <>
+    <div className="site-shell">
+      <ScrollToTop />
       <Header />
       <MobileCtaBar />
-      <main>
+      <div className="site-main">
         <Outlet />
-      </main>
+      </div>
       <BackToTop />
       <Footer />
-    </>
+    </div>
   );
 }
-
-export default Layout;

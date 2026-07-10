@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconMail, IconPhone } from './Icons';
+import { IconMail } from './Icons';
 
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
 
@@ -13,25 +13,6 @@ function ContactForm({ prefix = 'shared' }) {
   const [formMessage, setFormMessage] = useState(null);
   const [sending, setSending] = useState(false);
   const [errors, setErrors] = useState({});
-
-  if (!ACCESS_KEY) {
-    return (
-      <div className="contact-form contact-form-alt">
-        <h3>Свържете се с нас</h3>
-        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-          Изпратете ни запитване за оферта, консултация или сервизен въпрос.
-        </p>
-        <div className="form-message form-message--warning">
-          Функцията за изпращане на запитвания временно не е активна. Моля, използвайте телефона или имейла по-долу.
-        </div>
-        <div style={{ marginTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
-          <a href="tel:0878553273" className="btn btn-emergency" style={{ width: '100%', maxWidth: '280px' }}>
-            <IconPhone size={18} /> 0878 553 273 — 24/7
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   const validate = () => {
     const newErrors = {};
@@ -63,6 +44,14 @@ function ContactForm({ prefix = 'shared' }) {
     e.preventDefault();
     setFormMessage(null);
     if (!validate()) return;
+
+    if (!ACCESS_KEY) {
+      setFormMessage({
+        type: 'warning',
+        text: 'Формата е готова. Изпращането ще бъде активирано след конфигуриране на Web3Forms.',
+      });
+      return;
+    }
 
     setSending(true);
     try {
@@ -115,8 +104,10 @@ function ContactForm({ prefix = 'shared' }) {
           value={formData.name}
           onChange={handleChange}
           className={errors.name ? 'input-error' : ''}
+          aria-invalid={Boolean(errors.name)}
+          aria-describedby={errors.name ? `name-error-${prefix}` : undefined}
         />
-        {errors.name && <span className="form-error">{errors.name}</span>}
+        {errors.name && <span className="form-error" id={`name-error-${prefix}`}>{errors.name}</span>}
       </div>
 
       <div className="form-group">
@@ -129,8 +120,10 @@ function ContactForm({ prefix = 'shared' }) {
           value={formData.phone}
           onChange={handleChange}
           className={errors.phone ? 'input-error' : ''}
+          aria-invalid={Boolean(errors.phone)}
+          aria-describedby={errors.phone ? `phone-error-${prefix}` : undefined}
         />
-        {errors.phone && <span className="form-error">{errors.phone}</span>}
+        {errors.phone && <span className="form-error" id={`phone-error-${prefix}`}>{errors.phone}</span>}
       </div>
 
       <div className="form-group">
@@ -143,8 +136,10 @@ function ContactForm({ prefix = 'shared' }) {
           value={formData.email}
           onChange={handleChange}
           className={errors.email ? 'input-error' : ''}
+          aria-invalid={Boolean(errors.email)}
+          aria-describedby={errors.email ? `email-error-${prefix}` : undefined}
         />
-        {errors.email && <span className="form-error">{errors.email}</span>}
+        {errors.email && <span className="form-error" id={`email-error-${prefix}`}>{errors.email}</span>}
       </div>
 
       <div className="form-group">
@@ -157,8 +152,10 @@ function ContactForm({ prefix = 'shared' }) {
           onChange={handleChange}
           rows={4}
           className={errors.message ? 'input-error' : ''}
+          aria-invalid={Boolean(errors.message)}
+          aria-describedby={errors.message ? `message-error-${prefix}` : undefined}
         />
-        {errors.message && <span className="form-error">{errors.message}</span>}
+        {errors.message && <span className="form-error" id={`message-error-${prefix}`}>{errors.message}</span>}
       </div>
 
       {/* Honeypot — hidden from users */}
@@ -169,7 +166,7 @@ function ContactForm({ prefix = 'shared' }) {
       </button>
 
       {formMessage && (
-        <div className={`form-message form-message--${formMessage.type}`}>
+        <div className={`form-message form-message--${formMessage.type}`} role="status" aria-live="polite">
           {formMessage.text}
         </div>
       )}

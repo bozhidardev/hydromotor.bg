@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { IconPhone } from './Icons';
 
 function MobileCtaBar() {
   const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
 
   const isSafari = useMemo(() => {
     if (typeof navigator === 'undefined') return false;
@@ -19,7 +21,7 @@ function MobileCtaBar() {
     );
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   if (isSafari) {
     return (

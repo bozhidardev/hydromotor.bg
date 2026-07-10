@@ -79,13 +79,6 @@ export function productSchema(machine) {
       '@type': 'Organization',
       name: machine.brand,
     },
-    offers: {
-      '@type': 'Offer',
-      url: `${BASE_URL}/mashini/${machine.slug}`,
-      priceCurrency: 'BGN',
-      availability: 'https://schema.org/InStock',
-      itemCondition: 'https://schema.org/NewCondition',
-    },
     additionalProperty: machine.specs
       ? Object.entries(machine.specs).map(([key, value]) => ({
           '@type': 'PropertyValue',
